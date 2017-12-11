@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.Buscador" Title="Buscar empleo" BackgroundColor="White" Icon="acerca.png">
+	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,30,10,10" Spacing="10"> 
+                <Label Text="Buscar empleo"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                </Label>
+                <Label Text="Palabra a buscar: "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry x:Name="txtPalabra"
+                    Placeholder="Palabra de búsqueda"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Entry>
+
+                <Label Text="Desde: "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Picker x:Name="cmbDesde" Title="Seleccione un rango"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Hace 6 meses</x:String>
+                        <x:String>Hace 3 meses</x:String>
+                        <x:String>Hace 1 mese</x:String>
+                        <x:String>Hace 1 semana</x:String>
+                        <x:String>Ayer</x:String>
+                        <x:String>Hoy</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Categoria: "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Picker x:Name="cmbCategoria" Title="Seleccione una categoria"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    SelectedIndexChanged="seleccionaCategoria_SelectedIndexChanged">
+                </Picker>
+
+                <Label Text="Subcategoria: "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Picker x:Name="cmbSubCategoria" Title="Selecciona una subcategoria"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Subcategoria 1</x:String>
+                        <x:String>Subcategoria 2</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Salario: "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Picker x:Name="cmbSalario" Title="Seleccione un salario"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>$0 MNX - $5,000 MNX</x:String>
+                        <x:String>$5,000 MNX - $10,000 MNX</x:String>
+                        <x:String>$10,000 MNX - $15,000 MNX</x:String>
+                        <x:String>$15,000 MNX - $20,000 MNX</x:String>
+                        <x:String>$20,000 MNX - $30,000 MNX</x:String>
+                        <x:String>$30,000 MNX - $40,000 MNX</x:String>
+                        <x:String>$40,000 MNX - $50,000 MNX</x:String>
+                        <x:String>$50,000 MNX o más</x:String>
+                    </Picker.Items>
+                </Picker>
+                
+                <ActivityIndicator x:Name="waitActivityIndicador"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Button x:Name="btnBuscarEmpleo"
+                    FontFamily="Futura-Medium"
+                    Text="Buscar empleo"
+                    BackgroundColor="Navy"
+                    TextColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

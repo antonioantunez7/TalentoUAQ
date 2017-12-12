@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.DetalleOferta" Title="Detalle de la oferta" BackgroundColor="White">
+	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ListView
+                    x:Name="DetalleDeLaOferta" ItemsSource="{Binding DetalleDeLaOferta}" VerticalOptions="FillAndExpand" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                <Grid>
+                                      <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <!--<StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                                <ContentView Padding="0,0,0,0" VerticalOptions="FillAndExpand">
+                                                    <Image Source="{Binding url_portada}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="300"/>
+                                                </ContentView>
+                                            </StackLayout>
+                                        </StackLayout>-->
+                                        
+                                        <ScrollView Grid.Row="1">
+                                            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                                                <Label Text="{Binding titulo}" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" FontFamily="Futura-Medium" TextColor="#245664"></Label>
+                                                <Label Text="{Binding descripcion}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Label Text="{Binding sueldoInicio}" FontSize="10" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Label Text="{Binding sueldoFin}" FontSize="10" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                            </StackLayout>
+                                        </ScrollView>
+                                </Grid>
+                              </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+       </ScrollView>
+	</ContentPage.Content>
+</ContentPage>

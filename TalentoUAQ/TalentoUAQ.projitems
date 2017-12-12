@@ -60,6 +60,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Notificaciones.xaml.cs">
       <DependentUpon>Notificaciones.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Salarios.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Desde.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Ofertas.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\OfertasView.xaml.cs">
+      <DependentUpon>OfertasView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DetalleOferta.xaml.cs">
+      <DependentUpon>DetalleOferta.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -92,6 +101,14 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Notificaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\OfertasView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DetalleOferta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

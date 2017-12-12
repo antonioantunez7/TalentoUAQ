@@ -26,15 +26,8 @@
                 </Label>
                 <Picker x:Name="cmbDesde" Title="Seleccione un rango"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Center">
-                    <Picker.Items>
-                        <x:String>Hace 6 meses</x:String>
-                        <x:String>Hace 3 meses</x:String>
-                        <x:String>Hace 1 mese</x:String>
-                        <x:String>Hace 1 semana</x:String>
-                        <x:String>Ayer</x:String>
-                        <x:String>Hoy</x:String>
-                    </Picker.Items>
+                    VerticalOptions="Center"
+                    SelectedIndexChanged="seleccionaDesde_SelectedIndexChanged">
                 </Picker>
 
                 <Label Text="Categoria: "
@@ -56,10 +49,6 @@
                 <Picker x:Name="cmbSubCategoria" Title="Selecciona una subcategoria"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">
-                    <Picker.Items>
-                        <x:String>Subcategoria 1</x:String>
-                        <x:String>Subcategoria 2</x:String>
-                    </Picker.Items>
                 </Picker>
 
                 <Label Text="Salario: "
@@ -69,23 +58,15 @@
                 </Label>
                 <Picker x:Name="cmbSalario" Title="Seleccione un salario"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Center">
-                    <Picker.Items>
-                        <x:String>$0 MNX - $5,000 MNX</x:String>
-                        <x:String>$5,000 MNX - $10,000 MNX</x:String>
-                        <x:String>$10,000 MNX - $15,000 MNX</x:String>
-                        <x:String>$15,000 MNX - $20,000 MNX</x:String>
-                        <x:String>$20,000 MNX - $30,000 MNX</x:String>
-                        <x:String>$30,000 MNX - $40,000 MNX</x:String>
-                        <x:String>$40,000 MNX - $50,000 MNX</x:String>
-                        <x:String>$50,000 MNX o más</x:String>
-                    </Picker.Items>
+                    VerticalOptions="Center"
+                    SelectedIndexChanged="seleccionaSalario_SelectedIndexChanged">
                 </Picker>
                 
                 <ActivityIndicator x:Name="waitActivityIndicador"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
                 <Button x:Name="btnBuscarEmpleo"
+                    Clicked="buscarEmpleo_Clicked"
                     FontFamily="Futura-Medium"
                     Text="Buscar empleo"
                     BackgroundColor="Navy"

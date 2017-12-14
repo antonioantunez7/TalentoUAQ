@@ -27,7 +27,7 @@ namespace TalentoUAQ.Views
 
         void cargaOpciones(){
             opciones = new ObservableCollection<Opciones>();
-            opciones.Add(new Opciones { idOpcion = 1, nombre = "Mis favoritos", detalle = "Sin detalle", icono = "acerca.png" });
+            //opciones.Add(new Opciones { idOpcion = 1, nombre = "Mis favoritos", detalle = "Sin detalle", icono = "acerca.png" });
             opciones.Add(new Opciones { idOpcion = 2, nombre = "Sugerencias", detalle = "Sin detalle", icono = "acerca.png" });
             opciones.Add(new Opciones { idOpcion = 3, nombre = "Acerca de", detalle = "Sin detalle", icono = "acerca.png" });
             opciones.Add(new Opciones { idOpcion = 4, nombre = "Cerrar sesion", detalle = "Sin detalle", icono = "acerca.png" });
@@ -42,6 +42,9 @@ namespace TalentoUAQ.Views
                 if (opcion.idOpcion == 1)//1:Mis favoritos
                 {
                     await Navigation.PushAsync(new Favoritos());
+                } else if (opcion.idOpcion == 2)//2:Sugerencias
+                {
+                    await Navigation.PushAsync(new Sugerencias());
                 } else if (opcion.idOpcion == 3)//3:Acerca de
                 {
                     await Navigation.PushAsync(new AcercaDe());
@@ -53,7 +56,7 @@ namespace TalentoUAQ.Views
                         Application.Current.MainPage = new NavigationPage(new Login());
                     }
                 } else {
-                    await DisplayAlert("Información", opcion.nombre, "Aceptar");
+                    //await DisplayAlert("Información", opcion.nombre, "Aceptar");
                 }
                 listaOpciones.SelectedItem = null;//Para que automaticamente se deseleccione el elemento
             }     

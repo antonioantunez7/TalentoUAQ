@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.Favoritos" Title="Mis favoritos" BackgroundColor="White" Icon="acerca.png">
 	<ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" Padding="12">
-            <ScrollView VerticalOptions="FillAndExpand">
-                <Label 
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                HorizontalTextAlignment="Center"
-                VerticalTextAlignment="Center"
-                FontAttributes="Bold"
-                FontFamily="Futura-Medium"
-                FontSize="24"
-                Opacity="0.5"
-                Text="Mis favoritos van aqui"
-                ></Label>
-            </ScrollView>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <ListView
+                    x:Name="listaFavoritos" ItemsSource="{Binding listaFavoritos}" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="seleccionaFavorito_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame CornerRadius="10" Margin="3,5,3,5" >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,5,5,5" >
+                                        <!--<Image Source="{Binding icono}" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text = "{Binding titulo}" FontSize="20" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="Black"/>
+                                            <Label Text = "{Binding sueldoInicio}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25" FontFamily="Futura-Medium"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
 	</ContentPage.Content>
 </ContentPage>

@@ -6,43 +6,43 @@ using Xamarin.Forms;
 
 namespace TalentoUAQ.Views
 {
-    public partial class Favoritos : ContentPage
+    public partial class Sugerencias : ContentPage
     {
         public ObservableCollection<Ofertas> ofertas { get; set; }
-        public Favoritos()
+        public Sugerencias()
         {
             InitializeComponent();
-            cargaFavoritos();
+            cargaSugerencias();
         }
 
-        void cargaFavoritos()
+        void cargaSugerencias()
         {
             ofertas = new ObservableCollection<Ofertas>();
             ofertas.Add(new Ofertas
             {
-                titulo = "Mi favorito 1",
+                titulo = "Sugerencia 1",
                 sueldoInicio = 5000,
                 sueldoFin = 20000
             });
 
             ofertas.Add(new Ofertas
             {
-                titulo = "Mi favorito 2",
+                titulo = "Sugerencia 2",
                 sueldoInicio = 3000,
                 sueldoFin = 50000
             });
 
-            listaFavoritos.ItemsSource = ofertas;
+            listaSugerencias.ItemsSource = ofertas;
         }
 
-        async void seleccionaFavorito_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
-        {   
+        async void seleccionaSugerencia_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
             var oferta = e.SelectedItem as Ofertas;
             if (oferta != null)
             {
                 await Navigation.PushAsync(new DetalleOferta(oferta));
-                listaFavoritos.SelectedItem = null;//Para que automaticamente se deseleccione el elemento
-            } 
+                listaSugerencias.SelectedItem = null;//Para que automaticamente se deseleccione el elemento
+            }
         }
     }
 }

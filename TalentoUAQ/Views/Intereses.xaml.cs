@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace TalentoUAQ.Views
 {
-    public partial class Notificaciones : ContentPage
+    public partial class Intereses : ContentPage
     {
-        public Notificaciones()
+        public Intereses()
         {
             InitializeComponent();
         }

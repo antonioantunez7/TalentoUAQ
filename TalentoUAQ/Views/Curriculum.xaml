@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.Curriculum" Title="Curriculum" BackgroundColor="White" Icon="acerca.png">
 	<ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" Padding="12">
-            <ScrollView VerticalOptions="FillAndExpand">
-                <Label 
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                HorizontalTextAlignment="Center"
-                VerticalTextAlignment="Center"
-                FontAttributes="Bold"
-                FontFamily="Futura-Medium"
-                FontSize="24"
-                Opacity="0.5"
-                Text="Curriculum"
-                ></Label>
-            </ScrollView>
-        </StackLayout>
+        <StackLayout>  
+          <!--<Label x:Name="lbl1" Text="Items" VerticalOptions="StartAndExpand" HorizontalOptions="Center"></Label>-->
+          <ListView x:Name="listaOpcionesCurriculum" VerticalOptions="FillAndExpand">  
+             <ListView.ItemTemplate>  
+                <DataTemplate>  
+                   <ViewCell>  
+                      <ViewCell.View>  
+                         <StackLayout Orientation="Horizontal" Padding="5"> 
+                            <Label Text="{Binding nombre}" HorizontalOptions="StartAndExpand" FontSize="10"></Label>  
+                            <Button Text="Agregar"></Button> 
+                         </StackLayout>
+                                
+                      </ViewCell.View>  
+                   </ViewCell>  
+                </DataTemplate>  
+             </ListView.ItemTemplate>  
+          </ListView>  
+       </StackLayout>
 	</ContentPage.Content>
+    
 </ContentPage>

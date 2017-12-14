@@ -9,7 +9,7 @@ namespace TalentoUAQ
     {
         public MainPage(Usuarios usuario)
         {
-            Page buscador, notificaciones, curriculum, cuenta = null;
+            Page buscador, favoritos, curriculum, cuenta = null;
 
             switch (Device.RuntimePlatform)
             {
@@ -19,9 +19,9 @@ namespace TalentoUAQ
                         Title = "Buscador"
                     };
 
-                    notificaciones = new NavigationPage(new Notificaciones())
+                    favoritos = new NavigationPage(new Favoritos())
                     {
-                        Title = "Notificaciones"
+                        Title = "Mis Favoritos"
                     };
 
                     curriculum = new NavigationPage(new Curriculum())
@@ -37,7 +37,7 @@ namespace TalentoUAQ
 
 
                     buscador.Icon = "acerca.png";
-                    notificaciones.Icon = "acerca.png";
+                    favoritos.Icon = "acerca.png";
                     curriculum.Icon = "acerca.png";
                     cuenta.Icon = "acerca.png";
                     break;
@@ -47,9 +47,9 @@ namespace TalentoUAQ
                         Title = "Buscador"
                     };
 
-                    notificaciones = new Notificaciones()
+                    favoritos = new Favoritos()
                     {
-                        Title = "Notificaciones"
+                        Title = "Mis Favoritos"
                     };
 
                     curriculum = new Curriculum()
@@ -66,7 +66,7 @@ namespace TalentoUAQ
             }
 
             Children.Add(buscador);
-            Children.Add(notificaciones);
+            Children.Add(favoritos);
             Children.Add(curriculum);
             Children.Add(cuenta);
             Title = Children[0].Title;

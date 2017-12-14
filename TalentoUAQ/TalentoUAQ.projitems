@@ -57,9 +57,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Categorias.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Subcategorias.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Notificaciones.xaml.cs">
-      <DependentUpon>Notificaciones.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Salarios.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Desde.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Ofertas.cs" />
@@ -68,6 +65,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\DetalleOferta.xaml.cs">
       <DependentUpon>DetalleOferta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Sugerencias.xaml.cs">
+      <DependentUpon>Sugerencias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Intereses.xaml.cs">
+      <DependentUpon>Intereses.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -100,15 +103,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Notificaciones.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\OfertasView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DetalleOferta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Sugerencias.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Intereses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

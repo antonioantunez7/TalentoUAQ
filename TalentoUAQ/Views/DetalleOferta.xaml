@@ -9,8 +9,8 @@
                         <DataTemplate>
                             <ViewCell>
                                 <ViewCell.View>
-                                <Grid>
-                                      <Grid.RowDefinitions>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
@@ -21,17 +21,32 @@
                                                 </ContentView>
                                             </StackLayout>
                                         </StackLayout>-->
-                                        
+
                                         <ScrollView Grid.Row="1">
                                             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
                                                 <Label Text="{Binding titulo}" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" FontFamily="Futura-Medium" TextColor="#245664"></Label>
                                                 <Label Text="{Binding descripcion}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
                                                 <Label Text="{Binding sueldoInicio}" FontSize="10" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
                                                 <Label Text="{Binding sueldoFin}" FontSize="10" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Button x:Name="btnEnviarCorreo"
+                                                    Clicked="enviarCorrero"
+                                                    FontFamily="Futura-Medium"
+                                                    Text="Enviar Correo"
+                                                    BackgroundColor="Navy"
+                                                    TextColor="White"
+                                                    VerticalOptions="Center">
+                                                </Button>
+                                                <Button x:Name="btnAgregarFavoritos"
+                                                    FontFamily="Futura-Medium"
+                                                    Text="Agregar a Favoritos"
+                                                    BackgroundColor="Gray"
+                                                    TextColor="White"
+                                                    VerticalOptions="Center">
+                                                </Button>
                                             </StackLayout>
                                         </ScrollView>
-                                </Grid>
-                              </ViewCell.View>
+                                    </Grid>
+                                </ViewCell.View>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

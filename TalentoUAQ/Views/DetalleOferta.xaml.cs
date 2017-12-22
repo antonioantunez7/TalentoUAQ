@@ -24,5 +24,9 @@ namespace TalentoUAQ.Views
             };
             DetalleDeLaOferta.ItemsSource = ofertas;
         }
+        async void enviarCorrero(object sender, System.EventArgs e)
+        {
+            Device.OpenUri(new Uri("mailto:eduardo_sz5k4@hotmail.com"));
+        }
     }
 }

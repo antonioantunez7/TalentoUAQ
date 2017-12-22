@@ -24,5 +24,9 @@ namespace TalentoUAQ.Views
             opciones.Add(new Opciones { idOpcion = 4, nombre = "Educación", detalle = "", icono = "acerca.png" });
             listaOpcionesCurriculum.ItemsSource = opciones;
         }
+        async void agregarModal(object sender, System.EventArgs e)
+        {
+            await Navigation.PushModalAsync(new paso());
+        }
     }
 }

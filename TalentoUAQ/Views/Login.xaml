@@ -23,7 +23,7 @@
                     VerticalOptions="Center">
                 </Label>
                 <Entry x:Name="txtUsuario"
-                    Placeholder="Ingrese su usario"
+                    Placeholder="Ingrese su usuario"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">
                 </Entry>

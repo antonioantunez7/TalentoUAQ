@@ -7,13 +7,19 @@
              <ListView.ItemTemplate>  
                 <DataTemplate>  
                    <ViewCell>  
-                      <ViewCell.View>  
-                         <StackLayout Orientation="Horizontal" Padding="5"> 
-                            <Label Text="{Binding nombre}" HorizontalOptions="StartAndExpand" FontSize="10"></Label>  
-                            <Button Text="Agregar"></Button> 
-                         </StackLayout>
-                                
-                      </ViewCell.View>  
+                      <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Label Text="{Binding nombre}" HorizontalOptions="StartAndExpand" FontSize="10"></Label>
+                                    <Button x:Name="btnAgregar"
+                                            Clicked="agregarModal"
+                                            FontFamily="Futura-Medium"
+                                            Text="Agregar"
+                                            BackgroundColor="Navy"
+                                            TextColor="White"
+                                            VerticalOptions="Center">
+                                    </Button>
+                                </StackLayout>
+                            </ViewCell.View>  
                    </ViewCell>  
                 </DataTemplate>  
              </ListView.ItemTemplate>  

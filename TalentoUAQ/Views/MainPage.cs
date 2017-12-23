@@ -36,9 +36,9 @@ namespace TalentoUAQ
 
 
 
-                    buscador.Icon = "acerca.png";
-                    favoritos.Icon = "acerca.png";
-                    curriculum.Icon = "acerca.png";
+                    buscador.Icon = "buscador2.png";
+                    favoritos.Icon = "favoritos2.png";
+                    curriculum.Icon = "cv2.png";
                     cuenta.Icon = "acerca.png";
                     break;
                 default:

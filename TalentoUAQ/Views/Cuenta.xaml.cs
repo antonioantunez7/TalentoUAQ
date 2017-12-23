@@ -28,9 +28,9 @@ namespace TalentoUAQ.Views
         void cargaOpciones(){
             opciones = new ObservableCollection<Opciones>();
             //opciones.Add(new Opciones { idOpcion = 1, nombre = "Mis favoritos", detalle = "Sin detalle", icono = "acerca.png" });
-            opciones.Add(new Opciones { idOpcion = 2, nombre = "Sugerencias", detalle = "Sin detalle", icono = "acerca.png" });
+            opciones.Add(new Opciones { idOpcion = 2, nombre = "Sugerencias", detalle = "Sin detalle", icono = "sugerencias.png" });
             opciones.Add(new Opciones { idOpcion = 3, nombre = "Acerca de", detalle = "Sin detalle", icono = "acerca.png" });
-            opciones.Add(new Opciones { idOpcion = 4, nombre = "Cerrar sesion", detalle = "Sin detalle", icono = "acerca.png" });
+            opciones.Add(new Opciones { idOpcion = 4, nombre = "Cerrar sesion", detalle = "Sin detalle", icono = "salir.png" });
             listaOpciones.ItemsSource = opciones;
         }
 

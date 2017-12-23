@@ -26,7 +26,7 @@ namespace TalentoUAQ.Views
         }
         async void agregarModal(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new DescripcionCurriculum());
+            await Navigation.PushModalAsync(new DetalleCurriculum());
         }
     }
 }

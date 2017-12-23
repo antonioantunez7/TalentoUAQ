@@ -50,7 +50,6 @@ C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\Tale
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.Views.AboutPage.xaml.g.cs
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.Views.ItemDetailPage.xaml.g.cs
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.Views.ItemsPage.xaml.g.cs
-C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.Views.NewItemPage.xaml.g.cs
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.App.xaml.g.cs
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.Views.Login.xaml.g.cs
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.Views.AcercaDe.xaml.g.cs
@@ -86,6 +85,7 @@ C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\andr
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\obj\Debug\TalentoUAQ.Droid.Views.DescripcionCurriulum.xaml.g.cs
 C:\Users\user\Documents\proyetos\bolsa\talentoV1\TalentoUAQ\Droid\bin\Debug\TalentoUAQ.Droid.dll
 bin\Debug\Microsoft.CSharp.pdb
 bin\Debug\Mono.Android.pdb

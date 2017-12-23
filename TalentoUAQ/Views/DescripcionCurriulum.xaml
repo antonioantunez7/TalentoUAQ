@@ -1,14 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.NewItemPage" Title="New Item">
-	<ContentPage.ToolbarItems>
-		<ToolbarItem Text="Save" Clicked="Save_Clicked" />
-	</ContentPage.ToolbarItems>
-	<ContentPage.Content>
-		<StackLayout Spacing="20" Padding="15">
-			<Label Text="Text" FontSize="Medium" />
-			<Entry Text="{Binding Item.Text}" FontSize="Small" />
-			<Label Text="Description" FontSize="Medium" />
-			<Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
-		</StackLayout>
-	</ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.DescripcionCurriculum" Title="Buscar empleo" BackgroundColor="White" Icon="acerca.png">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,30,10,10" Spacing="10">
+                <Label Text="Información"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                </Label>
+                <Label Text="TiTulo del Curriculum "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry x:Name="txtTitulo"
+                    Placeholder="Nombre Completo"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Entry>
+                <Label Text="Objetivo Profesional"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Editor x:Name="txtObjetivo"
+                    Text="Coloca tus Objetivos"/>
+                <Button x:Name="btnRegresar"
+                    Clicked="regresar_Clicked"
+                    FontFamily="Futura-Medium"
+                    Text="Buscar empleo"
+                    BackgroundColor="Navy"
+                    TextColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
+

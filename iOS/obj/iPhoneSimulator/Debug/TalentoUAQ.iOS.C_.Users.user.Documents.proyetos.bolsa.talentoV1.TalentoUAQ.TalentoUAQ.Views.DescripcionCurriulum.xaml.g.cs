@@ -8,16 +8,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TalentoUAQ {
+namespace TalentoUAQ.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\user\\Documents\\proyetos\\bolsa\\talentoV1\\TalentoUAQ\\TalentoUAQ\\Views\\Desc" +
         "ripcionCurriulum.xaml")]
-    public partial class NewItemPage : global::Xamarin.Forms.ContentPage {
+    public partial class DescripcionCurriculum : global::Xamarin.Forms.ContentPage {
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry txtTitulo;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Editor txtObjetivo;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button btnRegresar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NewItemPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(DescripcionCurriculum));
+            txtTitulo = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "txtTitulo");
+            txtObjetivo = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Editor>(this, "txtObjetivo");
+            btnRegresar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnRegresar");
         }
     }
 }

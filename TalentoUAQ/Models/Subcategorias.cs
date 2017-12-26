@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace TalentoUAQ.Models
 {
     public class Subcategorias
@@ -42,4 +44,10 @@ namespace TalentoUAQ.Models
             set;
         }
     }
+
+    public class ListaSubcategorias
+    {
+        public List<Subcategorias> listaSubcategorias { get; set; }
+    }
+
 }

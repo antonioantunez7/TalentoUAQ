@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TalentoUAQ.Models;
+using TalentoUAQ.Services;
 using Xamarin.Forms;
 
 namespace TalentoUAQ.Views
 {
     public partial class Buscador : ContentPage
     {
-        List<Categorias> categorias;
-        List<Subcategorias> subcategorias;
+        List<Categorias> lcategorias;
+        List<Subcategorias> lsubcategorias;
         List<Salarios> salarios;
         List<Desde> desdes;
         public Buscador()
@@ -19,16 +21,29 @@ namespace TalentoUAQ.Views
             cargarDesde();
         }
 
-        void cargaCategorias(){
-            categorias = new List<Categorias>{
-                new Categorias {cveCategoria = 1, descCategoria = "Ingeniería"},
-                new Categorias {cveCategoria = 2, descCategoria = "Educación"},
-                new Categorias {cveCategoria = 3, descCategoria = "Biología"}
-            };
-            cmbCategoria.Items.Clear();
-            foreach(var categoria in categorias){
-                cmbCategoria.Items.Add(categoria.descCategoria);    
-            }
+        async void cargaCategorias(){
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                RestClient cliente = new RestClient();
+                var categorias = await cliente.GetCategorias<ListaCategorias>("http://189.211.201.181:69/TalentoUAQWebService/api/tblcategorias");
+                if(categorias != null){
+                    if(categorias.listaCategorias.Count > 0){
+                        lcategorias = new List<Categorias>();
+                        foreach(var categoria in categorias.listaCategorias){
+                            lcategorias.Add(new Categorias
+                            {
+                                cveCategoria = categoria.cveCategoria,
+                                descCategoria = categoria.descCategoria
+                            });    
+                        }
+                        cmbCategoria.Items.Clear();
+                        foreach (var categoria in lcategorias)
+                        {
+                            cmbCategoria.Items.Add(categoria.descCategoria);
+                        }
+                    }    
+                }
+            }); 
         }
 
         void seleccionaCategoria_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -36,12 +51,12 @@ namespace TalentoUAQ.Views
             var posicion = cmbCategoria.SelectedIndex;
             if (posicion > -1)
             { 
-                cargaSubcategorias(categorias[posicion].cveCategoria);
+                cargaSubcategorias(lcategorias[posicion].cveCategoria);
             }
         }
 
-        void cargaSubcategorias(int cveCategoria){
-            subcategorias = new List<Subcategorias>{ 
+        async void cargaSubcategorias(int cveCategoria){
+            /*subcategorias = new List<Subcategorias>{ 
                 new Subcategorias {cveSubcategoria = 1, descSubcategoria = "Computacion", cveCategoria = 1},
                 new Subcategorias {cveSubcategoria = 2, descSubcategoria = "Redes", cveCategoria = 1},
                 new Subcategorias {cveSubcategoria = 3, descSubcategoria = "Matematicas", cveCategoria = 2},
@@ -53,7 +68,37 @@ namespace TalentoUAQ.Views
                 if(subcategoria.cveCategoria == cveCategoria){
                     cmbSubCategoria.Items.Add(subcategoria.descSubcategoria);   
                 }   
-            }
+            }*/
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                RestClient cliente = new RestClient();
+                var subcategorias = await cliente.GetSubcategorias<ListaSubcategorias>("http://189.211.201.181:69/TalentoUAQWebService/api/tblsubcategorias/categoria?cveCategoria="+cveCategoria);
+                if(subcategorias != null){
+                    if(subcategorias.listaSubcategorias.Count > 0){
+                        lsubcategorias = new List<Subcategorias>();
+                        Debug.Write("Pa que veas pinche lalo ");
+                        Debug.Write(subcategorias.listaSubcategorias);
+                        Debug.Write("Pa que veas pinche lalo 2 ");
+                        foreach(var subcategoria in subcategorias.listaSubcategorias){
+                            Debug.Write("/");
+                            Debug.Write(subcategoria);
+                            Debug.Write("/");
+                            lsubcategorias.Add(new Subcategorias
+                            {
+                                cveSubcategoria = subcategoria.cveSubcategoria,
+                                descSubcategoria = subcategoria.descSubcategoria
+                            });
+                        }
+                        /*
+                        cmbSubCategoria.Items.Clear();
+                        foreach (var subcategoria in lsubcategorias)
+                        {
+                            cmbSubCategoria.Items.Add(subcategoria.descSubcategoria);
+                        }*/
+                    }    
+                }
+            });          
+
         }
 
         async void buscarEmpleo_Clicked(object sender, System.EventArgs e)
@@ -71,7 +116,7 @@ namespace TalentoUAQ.Views
             var posicionCveCategoria = cmbCategoria.SelectedIndex;
             int cveCategoria = 0;
             if(posicionCveCategoria > -1){
-                cveCategoria = categorias[posicionCveCategoria].cveCategoria;
+                cveCategoria = lcategorias[posicionCveCategoria].cveCategoria;
                 //await DisplayAlert("Información", categorias[posicionCveCategoria].cveCategoria+" "+categorias[posicionCveCategoria].descCategoria, "Aceptar");    
             }
 
@@ -79,7 +124,7 @@ namespace TalentoUAQ.Views
             int cveSubcategoria = 0;
             if (posicionCveSubcategoria > -1)
             {
-                cveSubcategoria = subcategorias[posicionCveSubcategoria].cveSubcategoria;
+                cveSubcategoria = lsubcategorias[posicionCveSubcategoria].cveSubcategoria;
                 //await DisplayAlert("Información", subcategorias[posicionCveSubcategoria].cveSubcategoria + " " + subcategorias[posicionCveSubcategoria].descSubcategoria, "Aceptar");
             }
             var posicionSalario = cmbSalario.SelectedIndex;

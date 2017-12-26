@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace TalentoUAQ.Models
 {
     public class Ofertas
@@ -77,5 +79,10 @@ namespace TalentoUAQ.Models
             set;
         }
 
+    }
+
+    public class ListaOfertas
+    {
+        public List<Ofertas> listaOfertas { get; set; }
     }
 }

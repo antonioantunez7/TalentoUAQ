@@ -11,5 +11,9 @@ namespace TalentoUAQ.Views
         {
             InitializeComponent();
         }
+        async void cerrarModal(object sender, EventArgs args)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

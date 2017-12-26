@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.Experiencia" Title="Experiencia" BackgroundColor="White">
 	<ContentPage.Content>
-        <Label Text="Experiencia aqui va"></Label>
-	</ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,30,10,10" Spacing="10">
+                <Label Text="Nueva Experiencia"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="Medium">
+                </Label>
+                <Label Text="Puesto"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry x:Name="txtPuesto"
+                    Placeholder="Nombre del Puesto"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Entry>
+                <Label Text="Empresa"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry x:Name="txtEmpresa"
+                    Placeholder="Nombre de la Empresa"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Entry>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Del"
+                        FontFamily="Futura-Medium"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Label Text="Al"
+                        FontFamily="Futura-Medium"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center">
+                    </Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <DatePicker x:Name="fechaInicio"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    </DatePicker>
+                    <DatePicker x:Name="fechaFin"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    </DatePicker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="5">
+                    <Button x:Name="btnGuardar"
+                        Clicked="cerrarModal"
+                        FontFamily="Futura-Medium"
+                        Text="Guardar"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    </Button>
+                    <Button x:Name="btnRegresar"
+                        Clicked="cerrarModal"
+                        FontFamily="Futura-Medium"
+                        Text="Cancelar"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.DetalleCurriculum" Title="Detalle del curriculum" BackgroundColor="White">
-	<ContentPage.Content>
-        <Label Text="Detalle del curriculum aqui va"></Label>
-	</ContentPage.Content>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,30,10,10" Spacing="10">
+                <Label Text="Información"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="Medium">
+                </Label>
+                <Label Text="Titulo del Curriculum "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry x:Name="txtTitulo"
+                    Placeholder="Nombre Completo"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Entry>
+                <Label Text="Objetivo Profesional"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Editor x:Name="txtObjetivo"
+                    Text="Coloca tus Objetivos"
+                    HeightRequest="100"/>
+                <StackLayout Orientation="Horizontal" Padding="5">
+                    <Button x:Name="btnGuardar"
+                        Clicked="cerrarModal"
+                        FontFamily="Futura-Medium"
+                        Text="Guardar"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    </Button>
+                    <Button x:Name="btnRegresar"
+                        Clicked="cerrarModal"
+                        FontFamily="Futura-Medium"
+                        Text="Cancelar"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

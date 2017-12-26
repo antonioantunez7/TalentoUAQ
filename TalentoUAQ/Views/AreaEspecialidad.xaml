@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.AreaEspecialidad" Title="Area de especialidad" BackgroundColor="White">
-	<ContentPage.Content>
-        <Label Text="Area de especialidad aqui va"></Label>
-	</ContentPage.Content>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,30,10,10" Spacing="10">
+                <Label Text="Nueva Area de Especialidad"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="Medium">
+                </Label>
+                <Label Text="Categoria: "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Picker x:Name="cmbCategoriaD" Title="Seleccione una categoria"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    SelectedIndexChanged="seleccionaCategoriaD_SelectedIndexChanged">
+                </Picker>
+
+                <Label Text="Subcategoria: "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Picker x:Name="cmbSubCategoriaD" Title="Selecciona una subcategoria"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Picker>
+                <StackLayout Orientation="Horizontal" Padding="5">
+                    <Button x:Name="btnGuardar"
+                        Clicked="cerrarModal"
+                        FontFamily="Futura-Medium"
+                        Text="Guardar"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    </Button>
+                    <Button x:Name="btnRegresar"
+                        Clicked="cerrarModal"
+                        FontFamily="Futura-Medium"
+                        Text="Cancelar"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

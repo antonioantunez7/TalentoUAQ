@@ -56,19 +56,6 @@ namespace TalentoUAQ.Views
         }
 
         async void cargaSubcategorias(int cveCategoria){
-            /*subcategorias = new List<Subcategorias>{ 
-                new Subcategorias {cveSubcategoria = 1, descSubcategoria = "Computacion", cveCategoria = 1},
-                new Subcategorias {cveSubcategoria = 2, descSubcategoria = "Redes", cveCategoria = 1},
-                new Subcategorias {cveSubcategoria = 3, descSubcategoria = "Matematicas", cveCategoria = 2},
-                new Subcategorias {cveSubcategoria = 4, descSubcategoria = "Quimica", cveCategoria = 2},
-                new Subcategorias {cveSubcategoria = 5, descSubcategoria = "Fauna", cveCategoria = 3}
-            };  
-            cmbSubCategoria.Items.Clear();
-            foreach(var subcategoria in subcategorias){
-                if(subcategoria.cveCategoria == cveCategoria){
-                    cmbSubCategoria.Items.Add(subcategoria.descSubcategoria);   
-                }   
-            }*/
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
@@ -76,25 +63,18 @@ namespace TalentoUAQ.Views
                 if(subcategorias != null){
                     if(subcategorias.listaSubcategorias.Count > 0){
                         lsubcategorias = new List<Subcategorias>();
-                        Debug.Write("Pa que veas pinche lalo ");
-                        Debug.Write(subcategorias.listaSubcategorias);
-                        Debug.Write("Pa que veas pinche lalo 2 ");
                         foreach(var subcategoria in subcategorias.listaSubcategorias){
-                            Debug.Write("/");
-                            Debug.Write(subcategoria);
-                            Debug.Write("/");
                             lsubcategorias.Add(new Subcategorias
                             {
                                 cveSubcategoria = subcategoria.cveSubcategoria,
                                 descSubcategoria = subcategoria.descSubcategoria
                             });
                         }
-                        /*
                         cmbSubCategoria.Items.Clear();
                         foreach (var subcategoria in lsubcategorias)
                         {
                             cmbSubCategoria.Items.Add(subcategoria.descSubcategoria);
-                        }*/
+                        }
                     }    
                 }
             });          

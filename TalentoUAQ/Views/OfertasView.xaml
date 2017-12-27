@@ -12,8 +12,16 @@
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,5,5,5" >
                                         <!--<Image Source="{Binding icono}" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
                                         <StackLayout Orientation="Vertical">
-                                            <Label Text = "{Binding titulo}" FontSize="20" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="Black"/>
-                                            <Label Text = "{Binding sueldoInicio}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25" FontFamily="Futura-Medium"/>
+                                            <Label Text = "{Binding titulo}" FontSize="20" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="Blue"/>
+                                            <StackLayout Orientation="Horizontal">
+                                              <Label FontSize="14" Text="Salario:" TextColor="Maroon" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                                              <Label HorizontalOptions="FillAndExpand" Text="{Binding sueldoInicio}" TextColor="Black"></Label>
+                                            </StackLayout>
+                                            <!--<Label Text = "{Binding sueldoInicio}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25" FontFamily="Futura-Medium"/>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text = "{Binding titulo}" FontSize="20" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="Black"/>
+                                                <Label Text = "{Binding sueldoInicio}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25" FontFamily="Futura-Medium"/>
+                                            </StackLayout>-->
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>

@@ -12,10 +12,10 @@ namespace TalentoUAQ.Views
         public Curriculum()
         {
             InitializeComponent();
-            cargaOpcionesCurriculum();
+            //cargaOpcionesCurriculum();
         }
 
-        void cargaOpcionesCurriculum()
+        /*void cargaOpcionesCurriculum()
         {
             opciones = new ObservableCollection<Opciones>();
             opciones.Add(new Opciones { idOpcion = 1, nombre = "Descripción", detalle = "", icono = "acerca.png" });
@@ -23,10 +23,26 @@ namespace TalentoUAQ.Views
             opciones.Add(new Opciones { idOpcion = 3, nombre = "Experiencia", detalle = "", icono = "acerca.png" });
             opciones.Add(new Opciones { idOpcion = 4, nombre = "Educación", detalle = "", icono = "acerca.png" });
             listaOpcionesCurriculum.ItemsSource = opciones;
-        }
-        async void agregarModal(object sender, System.EventArgs e)
+        }*/
+        async void agregarModalDescripcion(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new DetalleCurriculum());
+            await Navigation.PushAsync(new DetalleCurriculum());
+        }
+        async void agregarModalEspecialidad(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new AreaEspecialidad());
+        }
+        async void agregarModalExperiencia(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new Experiencia());
+        }
+        async void agregarModalEduacacion(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new Educacion());
+        }
+        async void agregarModalIdiomas(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new Idiomas());
         }
     }
 }

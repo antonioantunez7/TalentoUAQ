@@ -87,6 +87,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Idiomas.xaml.cs">
       <DependentUpon>Idiomas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NivelesAcademicos.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />

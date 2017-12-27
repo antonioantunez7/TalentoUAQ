@@ -7,6 +7,7 @@ namespace TalentoUAQ.Views
 {
     public partial class DetalleOferta : ContentPage
     {
+        string correoContacto;
         public DetalleOferta(Ofertas oferta)
         {
             InitializeComponent();
@@ -19,14 +20,18 @@ namespace TalentoUAQ.Views
                 new Ofertas { titulo =oferta.titulo,
                     descripcion = oferta.descripcion,
                     sueldoInicio = oferta.sueldoInicio,
-                    sueldoFin = oferta.sueldoFin
+                    sueldoFin = oferta.sueldoFin,
+                    rangoSueldo = oferta.rangoSueldo,
+                    nombreBoton = oferta.nombreBoton,
+                    fechaInicioOferta = oferta.fechaInicioOferta
                 }
             };
+            correoContacto = oferta.correoContacto;
             DetalleDeLaOferta.ItemsSource = ofertas;
         }
         async void enviarCorrero(object sender, System.EventArgs e)
         {
-            Device.OpenUri(new Uri("mailto:eduardo_sz5k4@hotmail.com"));
+            Device.OpenUri(new Uri("mailto:"+correoContacto));
         }
     }
 }

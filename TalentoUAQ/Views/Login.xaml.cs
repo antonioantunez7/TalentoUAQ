@@ -38,7 +38,7 @@ namespace TalentoUAQ.Views
                 waitActivityIndicador.IsRunning = false;//Quita el de cargando
                 if (eventos != null)
                 {
-                    Usuarios usuario = new Usuarios { idUsuario = 1, nombre = "Antonio", paterno = "Antunez", materno = "Barbosa" };
+                    Usuarios usuario = new Usuarios { idUsuario = 1, nombre = txtUsuario.Text, paterno = "Prueba", materno = "Prueba" };
                     Application.Current.MainPage = new NavigationPage(new MainPage(usuario));//Reemplaza la pagina
 
                 }

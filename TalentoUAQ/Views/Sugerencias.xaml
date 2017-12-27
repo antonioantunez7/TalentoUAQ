@@ -9,10 +9,15 @@
                         <DataTemplate>
                             <ViewCell>
                                 <Frame CornerRadius="10" Margin="3,5,3,5" >
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,5,5,5" >
-                                        <StackLayout Orientation="Vertical">
-                                            <Label Text = "{Binding titulo}" FontSize="20" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="Black"/>
-                                            <Label Text = "{Binding sueldoInicio}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25" FontFamily="Futura-Medium"/>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                          <Label FontSize="10" Text="{Binding rangoSueldo}" TextColor="Maroon" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="200"/>
+                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding fechaInicioOferta}" TextColor="Black"></Label>
+                                        </StackLayout>
+                                        <Label HorizontalOptions="Center" Text="{Binding titulo}" FontSize="20" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="Navy"/>
+                                        <StackLayout Orientation="Horizontal">
+                                          <Label FontSize="12" Text="Banamex" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="200" />
+                                          <Label FontSize="12" HorizontalOptions="FillAndExpand" Text="Querétaro" TextColor="Gray"></Label>
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>

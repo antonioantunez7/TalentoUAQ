@@ -8,10 +8,12 @@ namespace TalentoUAQ.Views
 {
     public partial class Curriculum : ContentPage
     {
-        public ObservableCollection<Opciones> opciones { get; set; }
+        public ObservableCollection<Ofertas> ofertas { get; set; }
+        public ObservableCollection<SubcategoriasUsuarios> subcategoriasUsuarios { get; set; }
         public Curriculum()
         {
             InitializeComponent();
+            cargarOfertas();
         }
 
         async void agregarModalDescripcion(object sender, System.EventArgs e)
@@ -33,6 +35,19 @@ namespace TalentoUAQ.Views
         async void agregarModalIdiomas(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new Idiomas());
+        }
+        void cargarOfertas() {
+            subcategoriasUsuarios = new ObservableCollection<SubcategoriasUsuarios>();
+            subcategoriasUsuarios.Add(new SubcategoriasUsuarios { idSubcategoriaUsuario = 1, desSubcategoria="Desarrollador Xamarin" });
+            subcategoriasUsuarios.Add(new SubcategoriasUsuarios { idSubcategoriaUsuario = 2, desSubcategoria = "Desarrollador PHP" });
+            subcategoriasUsuarios.Add(new SubcategoriasUsuarios { idSubcategoriaUsuario = 3, desSubcategoria = "Desarrollador .NET" });
+            subcategoriasUsuarios.Add(new SubcategoriasUsuarios { idSubcategoriaUsuario = 4, desSubcategoria = "Desarrollador Java" });
+            ListaSubcategoriasUsuarios.ItemsSource = subcategoriasUsuarios;
+        }
+
+        async void eliminarEspecialidad_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            var answer = await DisplayAlert("Confirmar", "¿Deseas Eliminar esta especialidad?", "Si", "No");
         }
     }
 }

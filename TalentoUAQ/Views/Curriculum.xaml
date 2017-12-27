@@ -36,9 +36,19 @@
                             VerticalOptions="Center">
                             </Button>
                         </StackLayout>
-                        <StackLayout>
-
-                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed augue vitae est iaculis pharetra at ut justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet ligula nec urna aliquet, eget tristique enim tincidunt. Nullam ipsum massa, porttitor sit amet convallis ut, volutpat eu nulla. Praesent aliquet lorem ut mi efficitur malesuada. Vivamus sodales risus nec lectus ultricies, non gravida sapien aliquet. Sed luctus tristique pretium. Sed eu arcu consequat, vestibulum neque a, condimentum elit. Vivamus eleifend arcu vel finibus interdum. Curabitur mattis sem ac semper fringilla. Ut at tellus mattis, consequat elit ullamcorper, porta lacus. Morbi ut arcu gravida, rutrum libero vel, ultrices mauris." HorizontalOptions="StartAndExpand" FontSize="10"></Label>
+                        <StackLayout VerticalOptions="Fill">
+                            <ListView x:Name="ListaSubcategoriasUsuarios" ItemsSource="{Binding ListaSubcategoriasUsuarios}" ItemSelected="eliminarEspecialidad_ItemSelected" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                                <StackLayout Orientation="Horizontal">
+                                                <Label FontSize="10" Text="{Binding desSubcategoria}" HorizontalOptions="FillAndExpand" TextColor="Maroon"/>
+                                                    <Image Source="eliminar.png" HorizontalOptions="End"></Image>
+                                                </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </StackLayout>
                     </StackLayout>
                 </Frame>

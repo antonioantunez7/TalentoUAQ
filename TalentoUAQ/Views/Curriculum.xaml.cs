@@ -12,18 +12,8 @@ namespace TalentoUAQ.Views
         public Curriculum()
         {
             InitializeComponent();
-            //cargaOpcionesCurriculum();
         }
 
-        /*void cargaOpcionesCurriculum()
-        {
-            opciones = new ObservableCollection<Opciones>();
-            opciones.Add(new Opciones { idOpcion = 1, nombre = "Descripción", detalle = "", icono = "acerca.png" });
-            opciones.Add(new Opciones { idOpcion = 2, nombre = "Mi area de especialidad", detalle = "Puedes tener máximo 3", icono = "acerca.png" });
-            opciones.Add(new Opciones { idOpcion = 3, nombre = "Experiencia", detalle = "", icono = "acerca.png" });
-            opciones.Add(new Opciones { idOpcion = 4, nombre = "Educación", detalle = "", icono = "acerca.png" });
-            listaOpcionesCurriculum.ItemsSource = opciones;
-        }*/
         async void agregarModalDescripcion(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new DetalleCurriculum());
@@ -43,9 +33,6 @@ namespace TalentoUAQ.Views
         async void agregarModalIdiomas(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new Idiomas());
-            Button boton = (Button)sender;
-            await DisplayAlert("Información", "xd: "+boton, "Aceptar");
-            await Navigation.PushModalAsync(new DetalleCurriculum());
         }
     }
 }

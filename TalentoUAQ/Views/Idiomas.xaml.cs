@@ -15,5 +15,13 @@ namespace TalentoUAQ.Views
         {
             await Navigation.PopModalAsync();
         }
+
+        void txtPorcentaje_ValueChanged(object sender, EventArgs args)
+        {
+            double porcentage = txtPorcentaje.Value;
+            int valo = Convert.ToInt32(porcentage);
+            string valor = valo + "%";
+            labelPorcentaje.Text = valor;
+        }
     }
 }

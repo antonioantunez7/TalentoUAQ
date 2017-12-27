@@ -8,7 +8,7 @@
                 <Frame CornerRadius="10" Margin="3,5,3,5" >
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="5">
-                            <Label Text="Descripción" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
+                            <Label Text="Eduardo Sánchez Zarco" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
                             <Button x:Name="btnDescripcion"
                             Clicked="agregarModalDescripcion"
                             FontFamily="Futura-Medium"
@@ -37,6 +37,7 @@
                             </Button>
                         </StackLayout>
                         <StackLayout>
+
                             <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed augue vitae est iaculis pharetra at ut justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet ligula nec urna aliquet, eget tristique enim tincidunt. Nullam ipsum massa, porttitor sit amet convallis ut, volutpat eu nulla. Praesent aliquet lorem ut mi efficitur malesuada. Vivamus sodales risus nec lectus ultricies, non gravida sapien aliquet. Sed luctus tristique pretium. Sed eu arcu consequat, vestibulum neque a, condimentum elit. Vivamus eleifend arcu vel finibus interdum. Curabitur mattis sem ac semper fringilla. Ut at tellus mattis, consequat elit ullamcorper, porta lacus. Morbi ut arcu gravida, rutrum libero vel, ultrices mauris." HorizontalOptions="StartAndExpand" FontSize="10"></Label>
                         </StackLayout>
                     </StackLayout>
@@ -98,6 +99,6 @@
                 <!--</ListView>-->
             </StackLayout>
         </ScrollView>
-</ContentPage.Content>
-    
+    </ContentPage.Content>
+
 </ContentPage>

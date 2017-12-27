@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TalentoUAQ.Models;
+using TalentoUAQ.Services;
 using Xamarin.Forms;
 
 namespace TalentoUAQ.Views
@@ -9,6 +10,9 @@ namespace TalentoUAQ.Views
     {
         List<Categorias> categorias;
         List<Subcategorias> subcategorias;
+        private List<Categorias> lcategorias;
+        private List<Subcategorias> lsubcategorias;
+
         public AreaEspecialidad()
         {
             InitializeComponent();
@@ -16,42 +20,67 @@ namespace TalentoUAQ.Views
         }
         void cargaCategorias()
         {
-            categorias = new List<Categorias>{
-                new Categorias {cveCategoria = 1, descCategoria = "Ingeniería"},
-                new Categorias {cveCategoria = 2, descCategoria = "Educación"},
-                new Categorias {cveCategoria = 3, descCategoria = "Biología"}
-            };
-            cmbCategoriaD.Items.Clear();
-            foreach (var categoria in categorias)
+            Device.BeginInvokeOnMainThread(async () =>
             {
-                cmbCategoriaD.Items.Add(categoria.descCategoria);
-            }
+                RestClient cliente = new RestClient();
+                var categorias = await cliente.GetCategorias<ListaCategorias>("http://189.211.201.181:69/TalentoUAQWebService/api/tblcategorias");
+                if (categorias != null)
+                {
+                    if (categorias.listaCategorias.Count > 0)
+                    {
+                        lcategorias = new List<Categorias>();
+                        foreach (var categoria in categorias.listaCategorias)
+                        {
+                            lcategorias.Add(new Categorias
+                            {
+                                cveCategoria = categoria.cveCategoria,
+                                descCategoria = categoria.descCategoria
+                            });
+                        }
+                        cmbCategoriaD.Items.Clear();
+                        foreach (var categoria in lcategorias)
+                        {
+                            cmbCategoriaD.Items.Add(categoria.descCategoria);
+                        }
+                    }
+                }
+            });
         }
         void seleccionaCategoriaD_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             var posicion = cmbCategoriaD.SelectedIndex;
             if (posicion > -1)
             {
-                cargaSubcategoriasD(categorias[posicion].cveCategoria);
+                cargaSubcategoriasD(lcategorias[posicion].cveCategoria);
             }
         }
         void cargaSubcategoriasD(int cveCategoria)
         {
-            subcategorias = new List<Subcategorias>{
-                new Subcategorias {cveSubcategoria = 1, descSubcategoria = "Computacion", cveCategoria = 1},
-                new Subcategorias {cveSubcategoria = 2, descSubcategoria = "Redes", cveCategoria = 1},
-                new Subcategorias {cveSubcategoria = 3, descSubcategoria = "Matematicas", cveCategoria = 2},
-                new Subcategorias {cveSubcategoria = 4, descSubcategoria = "Quimica", cveCategoria = 2},
-                new Subcategorias {cveSubcategoria = 5, descSubcategoria = "Fauna", cveCategoria = 3}
-            };
-            cmbSubCategoriaD.Items.Clear();
-            foreach (var subcategoria in subcategorias)
+            Device.BeginInvokeOnMainThread(async () =>
             {
-                if (subcategoria.cveCategoria == cveCategoria)
+                RestClient cliente = new RestClient();
+                var subcategorias = await cliente.GetSubcategorias<ListaSubcategorias>("http://189.211.201.181:69/TalentoUAQWebService/api/tblsubcategorias/categoria?cveCategoria=" + cveCategoria);
+                if (subcategorias != null)
                 {
-                    cmbSubCategoriaD.Items.Add(subcategoria.descSubcategoria);
+                    if (subcategorias.listaSubcategorias.Count > 0)
+                    {
+                        lsubcategorias = new List<Subcategorias>();
+                        foreach (var subcategoria in subcategorias.listaSubcategorias)
+                        {
+                            lsubcategorias.Add(new Subcategorias
+                            {
+                                cveSubcategoria = subcategoria.cveSubcategoria,
+                                descSubcategoria = subcategoria.descSubcategoria
+                            });
+                        }
+                        cmbSubCategoriaD.Items.Clear();
+                        foreach (var subcategoria in lsubcategorias)
+                        {
+                            cmbSubCategoriaD.Items.Add(subcategoria.descSubcategoria);
+                        }
+                    }
                 }
-            }
+            });
         }
         async void cerrarModal(object sender, EventArgs args)
         {

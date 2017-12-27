@@ -79,6 +79,16 @@ namespace TalentoUAQ.Models
             set;
         }
 
+        public string rangoSueldo{
+            get;
+            set;
+        }
+
+        public string nombreBoton{
+            get;
+            set;
+        }
+
     }
 
     public class ListaOfertas

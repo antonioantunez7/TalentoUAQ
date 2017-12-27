@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using TalentoUAQ.Models;
@@ -42,13 +42,10 @@ namespace TalentoUAQ.Views
         }
         async void agregarModalIdiomas(object sender, System.EventArgs e)
         {
-<<<<<<< HEAD
             await Navigation.PushAsync(new Idiomas());
-=======
             Button boton = (Button)sender;
             await DisplayAlert("Información", "xd: "+boton, "Aceptar");
             await Navigation.PushModalAsync(new DetalleCurriculum());
->>>>>>> edab5ac... a
         }
     }
 }

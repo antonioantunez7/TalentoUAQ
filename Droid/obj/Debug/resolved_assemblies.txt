@@ -1,4 +1,4 @@
-/Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/android/assets/TalentoUAQ.Droid.dll
+/Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/android/assets/talentouaq.droid.dll
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/android/assets/FormsViewGroup.dll
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/android/assets/Java.Interop.dll
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/android/assets/Microsoft.CSharp.dll

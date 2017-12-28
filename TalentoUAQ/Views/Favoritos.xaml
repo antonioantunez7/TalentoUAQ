@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.Favoritos" Title="Mis favoritos" BackgroundColor="White" Icon="favoritos2.png">
 	<ContentPage.Content>
-        <ScrollView>
+        <ScrollView x:Name="svFavoritos">
+            <Label x:Name="etiquetaCargando" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                FontAttributes="Bold" FontFamily="Futura-Medium"
+                FontSize="20" TextColor="Maroon">
+            </Label>
             <StackLayout>
                 <ListView
                     x:Name="listaFavoritos" ItemsSource="{Binding listaFavoritos}" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="seleccionaFavorito_ItemSelected">

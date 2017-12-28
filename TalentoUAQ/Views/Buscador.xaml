@@ -30,6 +30,17 @@
                     SelectedIndexChanged="seleccionaDesde_SelectedIndexChanged">
                 </Picker>
 
+                <Label Text="Localidad: "
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Picker x:Name="cmbEstado" Title="Seleccione un estado"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    SelectedIndexChanged="seleccionaEstado_SelectedIndexChanged">
+                </Picker>
+
                 <Label Text="Categoria: "
                     FontFamily="Futura-Medium"
                     HorizontalOptions="Start"

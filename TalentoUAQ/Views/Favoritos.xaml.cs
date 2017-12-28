@@ -18,6 +18,9 @@ namespace TalentoUAQ.Views
 
         async void cargaFavoritos()
         {
+            etiquetaCargando.Text = "Cargando favoritos, por favor espere...";
+            svFavoritos.Content = etiquetaCargando;
+
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
@@ -43,7 +46,14 @@ namespace TalentoUAQ.Views
                             });
                         }
                         listaFavoritos.ItemsSource = ofertas;
+                        svFavoritos.Content = listaFavoritos;
+                    } else {
+                        etiquetaCargando.Text = "Aún no tienes favoritos.";
+                        svFavoritos.Content = etiquetaCargando;
                     }
+                } else {
+                    etiquetaCargando.Text = "Error de conexión.";
+                    svFavoritos.Content = etiquetaCargando;
                 }
             }); 
         }

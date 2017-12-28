@@ -18,6 +18,9 @@ namespace TalentoUAQ.Views
 
         async void cargaSugerencias()
         {
+            etiquetaCargando.Text = "Cargando sugerencias, por favor espere...";
+            svSugerencias.Content = etiquetaCargando;
+
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
@@ -43,7 +46,14 @@ namespace TalentoUAQ.Views
                             });
                         }
                         listaSugerencias.ItemsSource = ofertas;
+                        svSugerencias.Content = listaSugerencias;
+                    } else {
+                        etiquetaCargando.Text = "No se encontraron sugerencias.";
+                        svSugerencias.Content = etiquetaCargando;
                     }
+                } else {
+                    etiquetaCargando.Text = "Error de conexión.";
+                    svSugerencias.Content = etiquetaCargando;
                 }
             });
         }

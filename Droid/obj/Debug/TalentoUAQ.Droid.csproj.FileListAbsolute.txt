@@ -86,10 +86,10 @@ C:/Users/user/Documents/proyetos/bolsa/talentoV1/TalentoUAQ/Droid/obj/Debug/andr
 C:/Users/user/Documents/proyetos/bolsa/talentoV1/TalentoUAQ/Droid/obj/Debug/android/assets/Xamarin.Forms.Xaml.dll.mdb
 C:/Users/user/Documents/proyetos/bolsa/talentoV1/TalentoUAQ/Droid/obj/Debug/TalentoUAQ.Droid.csprojResolveAssemblyReference.cache
 C:/Users/user/Documents/proyetos/bolsa/talentoV1/TalentoUAQ/Droid/obj/Debug/TalentoUAQ.Droid.Views.DescripcionCurriulum.xaml.g.cs
-/Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/TalentoUAQ.Droid.dll
-/Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/TalentoUAQ.Droid.pdb
-/Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/com.andradescompany.TalentoUAQ.apk
-/Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/com.andradescompany.TalentoUAQ-Signed.apk
+/Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/talentouaq.droid.dll
+/Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/talentouaq.droid.pdb
+/Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/com.andradescompany.talentouaq.apk
+/Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/com.andradescompany.talentouaq-Signed.apk
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/FormsViewGroup.dll
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/Newtonsoft.Json.dll
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/bin/Debug/Plugin.Connectivity.Abstractions.dll
@@ -155,9 +155,9 @@ C:/Users/user/Documents/proyetos/bolsa/talentoV1/TalentoUAQ/Droid/obj/Debug/Tale
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/TalentoUAQ.Droid.Views.Educacion.xaml.g.cs
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/TalentoUAQ.Droid.Views.Experiencia.xaml.g.cs
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/TalentoUAQ.Droid.Views.Idiomas.xaml.g.cs
-/Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/TalentoUAQ.Droid.dll
-/Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/TalentoUAQ.Droid.pdb
-/Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/android/bin/com.andradescompany.TalentoUAQ.apk
+/Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/talentouaq.droid.dll
+/Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/talentouaq.droid.pdb
+/Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/android/bin/com.andradescompany.talentouaq.apk
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/res/drawable/icon.png
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/res/drawable/xamarin_logo.png
 /Users/antonioantunez7/Projects/TalentoUAQ/Droid/obj/Debug/res/drawable-hdpi/icon.png
@@ -183,6 +183,6 @@ obj/Debug/linksrc/Plugin.Connectivity.dll.mdb
 obj/Debug/linksrc/Xamarin.Forms.Core.dll.mdb
 obj/Debug/linksrc/Xamarin.Forms.Platform.Android.dll.mdb
 obj/Debug/linksrc/Xamarin.Forms.Xaml.dll.mdb
-obj/Debug/linksrc/TalentoUAQ.Droid.pdb
+obj/Debug/linksrc/talentouaq.droid.pdb
 obj/Debug/linksrc/Mono.Android.pdb
 obj/Debug/linksrc/Plugin.Connectivity.Abstractions.pdb

@@ -13,9 +13,11 @@ namespace TalentoUAQ.Views
         List<Subcategorias> lsubcategorias;
         List<Salarios> salarios;
         List<Desde> desdes;
+        List<Estados> lestados;
         public Buscador()
         {
             InitializeComponent();
+            cargaEstados();
             cargaCategorias();
             cargaSalarios();
             cargarDesde();
@@ -29,6 +31,11 @@ namespace TalentoUAQ.Views
                 if(categorias != null){
                     if(categorias.listaCategorias.Count > 0){
                         lcategorias = new List<Categorias>();
+                        lcategorias.Add(new Categorias
+                        {
+                            cveCategoria = 0,
+                            descCategoria = "Todas"
+                        });
                         foreach(var categoria in categorias.listaCategorias){
                             lcategorias.Add(new Categorias
                             {
@@ -46,11 +53,20 @@ namespace TalentoUAQ.Views
             }); 
         }
 
+        /*async*/ void seleccionaEstado_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            var posicion = cmbEstado.SelectedIndex;
+            if (posicion > -1)
+            { 
+                //await DisplayAlert("Información", lestados[posicion].cveEstado + " " + lestados[posicion].descEstado, "Aceptar");
+            }
+        }
+
         void seleccionaCategoria_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             var posicion = cmbCategoria.SelectedIndex;
             if (posicion > -1)
-            { 
+            {
                 cargaSubcategorias(lcategorias[posicion].cveCategoria);
             }
         }
@@ -63,6 +79,11 @@ namespace TalentoUAQ.Views
                 if(subcategorias != null){
                     if(subcategorias.listaSubcategorias.Count > 0){
                         lsubcategorias = new List<Subcategorias>();
+                        lsubcategorias.Add(new Subcategorias
+                        {
+                            cveSubcategoria = 0,
+                            descSubcategoria = "Todas"
+                        });
                         foreach(var subcategoria in subcategorias.listaSubcategorias){
                             lsubcategorias.Add(new Subcategorias
                             {
@@ -85,6 +106,14 @@ namespace TalentoUAQ.Views
         {
             //await DisplayAlert("Información", "Los datos son los siguientes", "Aceptar");
             string palabra = txtPalabra.Text;
+
+            var posicionCveEstado = cmbEstado.SelectedIndex;
+            int cveEstado = 0;
+            if (posicionCveEstado > -1)
+            {
+                cveEstado = lestados[posicionCveEstado].cveEstado;
+                //await DisplayAlert("Información", lestados[posicionCveEstado].cveEstado+" "+lestados[posicionCveEstado].descEstado, "Aceptar");    
+            }
             //await DisplayAlert("Información", palabra, "Aceptar");
             var posicionIdDesde = cmbDesde.SelectedIndex;
             int numeroDiasDesde = 0;//Hace cuantos dias se publico la oferta
@@ -116,19 +145,29 @@ namespace TalentoUAQ.Views
                 //await DisplayAlert("Salario inicio", salarios[posicionSalario].salarioInicio+" "+salarios[posicionSalario].descripcionSalario, "Aceptar");           
                 //await DisplayAlert("Salario fin", salarios[posicionSalario].salarioFin+" "+salarios[posicionSalario].descripcionSalario, "Aceptar");           
             }
+            DateTime fecha_actual = DateTime.Today;
+            string fechaInicioOferta = fecha_actual.ToString();
+            fechaInicioOferta = this.fechaDateTimeaNormal(fechaInicioOferta);
+            if(numeroDiasDesde != 0){
+                DateTime fechaInicio = DateTime.Today.AddDays(-numeroDiasDesde);  
+                fechaInicioOferta = fechaInicio.ToString();
+                fechaInicioOferta = this.fechaDateTimeaNormal(fechaInicioOferta);
+            }
 
             Ofertas oferta = new Ofertas
             {
                 titulo = palabra,
                 cveSubcategoria = cveSubcategoria,
                 sueldoInicio = sueldoInicio,
-                sueldoFin = sueldoFin
+                sueldoFin = sueldoFin,
+                fechaInicioOferta = fechaInicioOferta
             };
             await Navigation.PushAsync(new OfertasView(oferta));
         }
 
         void cargaSalarios(){
             salarios = new List<Salarios>{
+                new Salarios {idSalario = 0, salarioInicio = 0, salarioFin = 0, descripcionSalario = "Todos"},
                 new Salarios {idSalario = 1, salarioInicio = 0, salarioFin = 5000, descripcionSalario = "$0 MXN - $5,000 MXN"},
                 new Salarios {idSalario = 2, salarioInicio = 5000, salarioFin = 10000, descripcionSalario = "$5,000 MXN - $10,000 MXN"},
                 new Salarios {idSalario = 3, salarioInicio = 10000, salarioFin = 15000, descripcionSalario = "$10,000 MXN - $15,000 MXN"},
@@ -158,6 +197,7 @@ namespace TalentoUAQ.Views
 
         void cargarDesde(){
             desdes = new List<Desde>{
+                new Desde {idDesde = 0, numeroDias = 0, descripcion = "Hoy"},
                 new Desde {idDesde = 1, numeroDias = 1, descripcion = "Ayer"},
                 new Desde {idDesde = 2, numeroDias = 2, descripcion = "Hace 2 días"},
                 new Desde {idDesde = 3, numeroDias = 3, descripcion = "Hace 3 días"},
@@ -182,7 +222,59 @@ namespace TalentoUAQ.Views
             if (posicionDesde > -1)
             {
                 //await DisplayAlert("Información", desdes[posicionDesde].idDesde + " " + desdes[posicionDesde].descripcion, "Aceptar");
+            } 
+        }
+
+        public string fechaDateTimeaNormal(string fecha)
+        {
+            // 12/28/2017 12:00:00 a.m.
+            string[] fechaMDA = fecha.Split(' ');
+            string[] fechaNormal = fechaMDA[0].Split('/');
+            string dia = fechaNormal[1];
+            if(Convert.ToInt32(dia) < 10){
+                dia = "0"+dia;    
             }
+            string mes = fechaNormal[0];
+            if (Convert.ToInt32(mes) < 10)
+            {
+                mes = "0" + mes;
+            }
+            string anio = fechaNormal[2];
+            return dia + "-" + mes + "-" + anio;
+        }
+
+        async void cargaEstados()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                RestClient cliente = new RestClient();
+                var estados = await cliente.GetEstados<ListaEstados>("http://189.211.201.181:69/TalentoUAQWebService/api/tblestados");
+                if (estados != null)
+                {
+                    if (estados.listaEstados.Count > 0)
+                    {
+                        lestados = new List<Estados>();
+                        lestados.Add(new Estados
+                        {
+                            cveEstado = 0,
+                            descEstado = "Todos"
+                        });
+                        foreach (var estado in estados.listaEstados)
+                        {
+                            lestados.Add(new Estados
+                            {
+                                cveEstado = estado.cveEstado,
+                                descEstado = estado.descEstado
+                            });
+                        }
+                        cmbEstado.Items.Clear();
+                        foreach (var estado in lestados)
+                        {
+                            cmbEstado.Items.Add(estado.descEstado);
+                        }
+                    }
+                }
+            });
         }
     }
 }

@@ -105,8 +105,8 @@ public class MonoPackageManager {
 
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
-		/* We need to ensure that "TalentoUAQ.Droid.dll" comes first in this list. */
-		"TalentoUAQ.Droid.dll",
+		/* We need to ensure that "talentouaq.droid.dll" comes first in this list. */
+		"talentouaq.droid.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.Connectivity.Abstractions.dll",

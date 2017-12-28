@@ -19,6 +19,9 @@ namespace TalentoUAQ.Views
 
         async void cargaOfertas(Ofertas oferta)
         {
+            etiquetaCargando.Text = "Cargando ofertas, por favor espere...";
+            svOfertas.Content = etiquetaCargando;
+
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
@@ -36,8 +39,13 @@ namespace TalentoUAQ.Views
                 {
                     sueldoFin = "" + oferta.sueldoFin;
                 }
-                Debug.Write("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/0/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0");
-                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/"+titulo+"/sueldoInicio/"+sueldoInicio+"/sueldoFin/"+sueldoFin+"/fechaInicioOferta/0/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0");
+                string fechaInicioOferta = oferta.fechaInicioOferta;
+                Console.WriteLine("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/" + fechaInicioOferta + "/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0");
+                Debug.Write("\nfechaDesde: [");
+                Debug.Write(fechaInicioOferta);
+                Debug.Write("\n]");
+                Debug.Write("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0");
+                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/"+titulo+"/sueldoInicio/"+sueldoInicio+"/sueldoFin/"+sueldoFin+"/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0");
                 if (ofertasResp != null)
                 {
                     if (ofertasResp.listaOfertas.Count > 0)
@@ -58,7 +66,14 @@ namespace TalentoUAQ.Views
                             });
                         }
                         listaOfertas.ItemsSource = ofertas;
+                        svOfertas.Content = listaOfertas;
+                    } else{
+                        etiquetaCargando.Text = "No se encontraron ofertas con los criterios seleccionados.";
+                        svOfertas.Content = etiquetaCargando;
                     }
+                } else{
+                    etiquetaCargando.Text = "Error de conexión.";
+                    svOfertas.Content = etiquetaCargando;
                 }
             }); 
         }

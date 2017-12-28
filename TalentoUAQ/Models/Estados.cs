@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace TalentoUAQ.Models
 {
@@ -9,27 +8,32 @@ namespace TalentoUAQ.Models
         {
         }
 
-        public int cveEstado{
+        public int cveEstado
+        {
             get;
             set;
         }
 
-        public string descEstado{
+        public string descEstado
+        {
             get;
             set;
         }
 
-        public string activo{
+        public string activo
+        {
             get;
             set;
         }
 
-        public string fechaRegistro{
+        public string fechaRegistro
+        {
             get;
             set;
         }
 
-        public string fechaActualizacion{
+        public string fechaActualizacion
+        {
             get;
             set;
         }

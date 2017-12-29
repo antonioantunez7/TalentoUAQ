@@ -31,18 +31,9 @@
                 </Picker>
                 <StackLayout Orientation="Horizontal" Padding="5">
                     <Button x:Name="btnGuardar"
-                        Clicked="cerrarModal"
+                        Clicked="guardarSubcategoria"
                         FontFamily="Futura-Medium"
                         Text="Guardar"
-                        BackgroundColor="Navy"
-                        TextColor="White"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
-                    </Button>
-                    <Button x:Name="btnRegresar"
-                        Clicked="cerrarModal"
-                        FontFamily="Futura-Medium"
-                        Text="Cancelar"
                         BackgroundColor="Navy"
                         TextColor="White"
                         HorizontalOptions="FillAndExpand"

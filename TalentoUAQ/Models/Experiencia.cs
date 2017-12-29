@@ -3,31 +3,43 @@ using System.Collections.Generic;
 
 namespace TalentoUAQ.Models
 {
-    public class SubcategoriasUsuarios
+    public class Experiencias
     {
-        public SubcategoriasUsuarios()
+        public Experiencias()
         {
         }
 
-        public int idSubcategoriaUsuario
-        {
-            get;
-            set;
-        }
-
-        public int cveSubcategoria
+        public int idExperiencia
         {
             get;
             set;
         }
 
-        public int idUsuarioExterno
+        public string idAspirante
         {
             get;
             set;
         }
 
-        public string desSubcategoria
+        public string empresa
+        {
+            get;
+            set;
+        }
+
+        public string puesto
+        {
+            get;
+            set;
+        }
+
+        public string fechaInicio
+        {
+            get;
+            set;
+        }
+
+        public string fechaFin
         {
             get;
             set;
@@ -52,8 +64,9 @@ namespace TalentoUAQ.Models
         }
     }
 
-    public class ListaSubcategoriasUsuarios
+    public class ListaExperiencias
     {
-        public List<SubcategoriasUsuarios> listaSubcategoriasUsuarios { get; set; }
+        public List<Experiencias> listaExperiencias { get; set; }
     }
+
 }

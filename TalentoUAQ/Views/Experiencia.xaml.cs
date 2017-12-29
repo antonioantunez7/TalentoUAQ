@@ -11,9 +11,23 @@ namespace TalentoUAQ.Views
         {
             InitializeComponent();
         }
-        async void cerrarModal(object sender, EventArgs args)
+        async void guardarExperiencia(object sender, EventArgs args)
         {
-            await Navigation.PopModalAsync();
+            bool error = false;
+            if (string.IsNullOrEmpty(txtEmpresa.Text))
+            {
+                await DisplayAlert("Error", "Coloca el nombre de la Empresa ", "Aceptar");
+            }
+            if (string.IsNullOrEmpty(txtPuesto.Text))
+            {
+                error = true;
+                await DisplayAlert("Error", "Coloca el Puesto", "Aceptar");
+            }
+            if (!error)
+            {
+                await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
+                await Navigation.PopAsync();
+            }
         }
     }
 }

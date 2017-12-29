@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.Educacion" Title="Educación" BackgroundColor="White">
-	<ContentPage.Content>
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10,30,10,10" Spacing="10">
                 <Label Text="Datos Escolares"
@@ -19,9 +19,9 @@
                     VerticalOptions="Center">
                 </Picker>
                 <Entry x:Name="txtCarrera"
-                        Placeholder="Carrera o Titulo"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                    Placeholder="Carrera o Titulo"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
                 </Entry>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Del"
@@ -45,26 +45,15 @@
                         VerticalOptions="Center">
                     </DatePicker>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" Padding="5">
-                    <Button x:Name="btnGuardar"
-                        Clicked="cerrarModal"
-                        FontFamily="Futura-Medium"
-                        Text="Guardar"
-                        BackgroundColor="Navy"
-                        TextColor="White"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
-                    </Button>
-                    <Button x:Name="btnRegresar"
-                        Clicked="cerrarModal"
-                        FontFamily="Futura-Medium"
-                        Text="Cancelar"
-                        BackgroundColor="Navy"
-                        TextColor="White"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
-                    </Button>
-                </StackLayout>
+                <Button x:Name="btnGuardar"
+                    Clicked="guardarEducacion"
+                    FontFamily="Futura-Medium"
+                    Text="Guardar"
+                    BackgroundColor="Navy"
+                    TextColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

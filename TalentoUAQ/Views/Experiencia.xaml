@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.Views.Experiencia" Title="Experiencia" BackgroundColor="White">
-	<ContentPage.Content>
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10,30,10,10" Spacing="10">
                 <Label Text="Nueva Experiencia"
@@ -9,16 +9,6 @@
                     VerticalOptions="Center"
                     FontSize="Medium">
                 </Label>
-                <Label Text="Puesto"
-                    FontFamily="Futura-Medium"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center">
-                </Label>
-                <Entry x:Name="txtPuesto"
-                    Placeholder="Nombre del Puesto"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Center">
-                </Entry>
                 <Label Text="Empresa"
                     FontFamily="Futura-Medium"
                     HorizontalOptions="Start"
@@ -26,6 +16,16 @@
                 </Label>
                 <Entry x:Name="txtEmpresa"
                     Placeholder="Nombre de la Empresa"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                </Entry>
+                <Label Text="Puesto"
+                    FontFamily="Futura-Medium"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry x:Name="txtPuesto"
+                    Placeholder="Nombre del Puesto"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">
                 </Entry>
@@ -53,18 +53,9 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Padding="5">
                     <Button x:Name="btnGuardar"
-                        Clicked="cerrarModal"
+                        Clicked="guardarExperiencia"
                         FontFamily="Futura-Medium"
                         Text="Guardar"
-                        BackgroundColor="Navy"
-                        TextColor="White"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
-                    </Button>
-                    <Button x:Name="btnRegresar"
-                        Clicked="cerrarModal"
-                        FontFamily="Futura-Medium"
-                        Text="Cancelar"
                         BackgroundColor="Navy"
                         TextColor="White"
                         HorizontalOptions="FillAndExpand"

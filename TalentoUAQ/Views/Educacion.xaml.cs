@@ -13,7 +13,8 @@ namespace TalentoUAQ.Views
             InitializeComponent();
             cargarNivelesAcademicos();
         }
-        void cargarNivelesAcademicos() {
+        void cargarNivelesAcademicos()
+        {
             nivelesAcademicos = new List<NivelesAcademicos>{
                 new NivelesAcademicos {idNivelAcademico = 1, desNivelAcademico = "Secundaria"},
                 new NivelesAcademicos {idNivelAcademico = 2, desNivelAcademico = "Bachillerato"},
@@ -31,9 +32,38 @@ namespace TalentoUAQ.Views
                 cmbNivelAcademico.Items.Add(nivel.desNivelAcademico);
             }
         }
-        async void cerrarModal(object sender, EventArgs args)
+        async void guardarEducacion(object sender, EventArgs args)
         {
-            await Navigation.PopModalAsync();
+            string escuela = txtEscuela.Text;
+            int posicion = cmbNivelAcademico.SelectedIndex;
+            int nivelAcademico = 0;
+            if (posicion > -1)
+            {
+                nivelAcademico = nivelesAcademicos[posicion].idNivelAcademico;
+            }
+            string carrera = txtCarrera.Text;
+            bool error = false;
+            if (string.IsNullOrEmpty(escuela))
+            {
+                error = true;
+                await DisplayAlert("Error", "Captura la escuela donde estudiaste", "Aceptar");
+            }
+            if (nivelAcademico == 0)
+            {
+                error = true;
+                await DisplayAlert("Error", "Seecciona un nivel Academico", "Aceptar");
+            }
+            if (string.IsNullOrEmpty(carrera))
+            {
+                error = true;
+                await DisplayAlert("Error", "Captura la Carrera o e título", "Aceptar");
+            }
+            if (!error)
+            {
+                await DisplayAlert("Correcto", "Se guardarón los datos", "Aceptar");
+                await Navigation.PopAsync();
+            }
         }
+
     }
 }

@@ -5,7 +5,7 @@
             <StackLayout>
                 <!--<Label x:Name="lbl1" Text="Items" VerticalOptions="StartAndExpand" HorizontalOptions="Center"></Label>-->
                 <!--<ListView x:Name="listaOpcionesCurriculum" VerticalOptions="FillAndExpand">-->
-                <Frame CornerRadius="10" Margin="3,5,3,5" >
+                <Frame CornerRadius="10">
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="5">
                             <Label Text="Eduardo Sánchez Zarco" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
@@ -23,28 +23,68 @@
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                <Frame CornerRadius="10" Margin="3,5,3,5" >
+                <Frame CornerRadius="10" HeightRequest="200">
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="5">
                             <Label Text="Especialidad" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
                             <Button x:Name="btnEspecialidad"
-                            Clicked="agregarModalEspecialidad"
-                            FontFamily="Futura-Medium"
-                            Text="Agregar"
-                            BackgroundColor="Navy"
-                            TextColor="White"
-                            VerticalOptions="Center">
+                                Clicked="agregarModalEspecialidad"
+                                FontFamily="Futura-Medium"
+                                Text="Agregar"
+                                BackgroundColor="Navy"
+                                TextColor="White"
+                                VerticalOptions="Center">
                             </Button>
                         </StackLayout>
-                        <StackLayout VerticalOptions="Fill">
-                            <ListView x:Name="ListaSubcategoriasUsuarios" ItemsSource="{Binding ListaSubcategoriasUsuarios}" ItemSelected="eliminarEspecialidad_ItemSelected" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                        <StackLayout VerticalOptions="Fill" >
+                            <ScrollView>
+                                <ListView x:Name="ListaSubcategoriasUsuarios" ItemsSource="{Binding ListaSubcategoriasUsuarios}" ItemSelected="eliminarEspecialidad_ItemSelected" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label FontSize="15" Text="{Binding desSubcategoria}" HorizontalOptions="FillAndExpand"/>
+                                                    <Image Source="eliminar.png" HorizontalOptions="End"></Image>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="10" HeightRequest="300">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="5">
+                            <Label Text="Experiencia" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
+                            <Button x:Name="btnExperienciar"
+                                 Clicked="agregarModalExperiencia"
+                                 FontFamily="Futura-Medium"
+                                 Text="Agregar"
+                                 BackgroundColor="Navy"
+                                 TextColor="White"
+                                 VerticalOptions="Center">
+                            </Button>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <ListView x:Name="ListaExperiencia" ItemsSource="{Binding ListaExperiencia}" ItemSelected="verExperiencia" HasUnevenRows="True" VerticalOptions="FillAndExpand">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
-                                                <StackLayout Orientation="Horizontal">
-                                                <Label FontSize="10" Text="{Binding desSubcategoria}" HorizontalOptions="FillAndExpand" TextColor="Maroon"/>
-                                                    <Image Source="eliminar.png" HorizontalOptions="End"></Image>
+                                            <StackLayout Orientation="Horizontal" Padding="5">
+                                                <Image Source="work.png" HorizontalOptions="Start"/>
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                    <Label Text="{Binding empresa}" HorizontalOptions="Start" FontSize="15"/>
+                                                    <Label Text="{Binding puesto}" HorizontalOptions="Start" FontSize="13"/>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Del " HorizontalOptions="Start" FontSize="10"/>
+                                                        <Label Text="{Binding fechaInicio}" HorizontalOptions="Start" FontSize="10"/>
+                                                        <Label Text="Al " HorizontalOptions="Start" FontSize="10"/>
+                                                        <Label Text="{Binding fechaFin}" HorizontalOptions="Start" FontSize="10"/>
+                                                    </StackLayout>
                                                 </StackLayout>
+                                            </StackLayout>
                                         </ViewCell>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -52,43 +92,53 @@
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                <Frame CornerRadius="10" Margin="3,5,3,5" >
+                <Frame CornerRadius="10" HeightRequest="250">
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="5">
-                            <Label Text="Experiencia" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
-                            <Button x:Name="btnExperienciar"
-                             Clicked="agregarModalExperiencia"
-                             FontFamily="Futura-Medium"
-                             Text="Agregar"
-                             BackgroundColor="Navy"
-                             TextColor="White"
-                             VerticalOptions="Center">
-                            </Button>
-                        </StackLayout>
-                        <StackLayout>
-                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed augue vitae est iaculis pharetra at ut justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet ligula nec urna aliquet, eget tristique enim tincidunt. Nullam ipsum massa, porttitor sit amet convallis ut, volutpat eu nulla. Praesent aliquet lorem ut mi efficitur malesuada. Vivamus sodales risus nec lectus ultricies, non gravida sapien aliquet. Sed luctus tristique pretium. Sed eu arcu consequat, vestibulum neque a, condimentum elit. Vivamus eleifend arcu vel finibus interdum. Curabitur mattis sem ac semper fringilla. Ut at tellus mattis, consequat elit ullamcorper, porta lacus. Morbi ut arcu gravida, rutrum libero vel, ultrices mauris." HorizontalOptions="StartAndExpand" FontSize="10"></Label>
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-                <Frame CornerRadius="10" Margin="3,5,3,5" >
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal" Padding="5">
-                            <Label Text="Eduacación" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
+                            <Label Text="Educación" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
                             <Button x:Name="btnEducacion"
-                            Clicked="agregarModalEduacacion"
-                            FontFamily="Futura-Medium"
-                            Text="Agregar"
-                            BackgroundColor="Navy"
-                            TextColor="White"
-                            VerticalOptions="Center">
+                                Clicked="agregarModalEducacion"
+                                FontFamily="Futura-Medium"
+                                Text="Agregar"
+                                BackgroundColor="Navy"
+                                TextColor="White"
+                                VerticalOptions="Center">
                             </Button>
                         </StackLayout>
-                        <StackLayout>
-                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed augue vitae est iaculis pharetra at ut justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet ligula nec urna aliquet, eget tristique enim tincidunt. Nullam ipsum massa, porttitor sit amet convallis ut, volutpat eu nulla. Praesent aliquet lorem ut mi efficitur malesuada. Vivamus sodales risus nec lectus ultricies, non gravida sapien aliquet. Sed luctus tristique pretium. Sed eu arcu consequat, vestibulum neque a, condimentum elit. Vivamus eleifend arcu vel finibus interdum. Curabitur mattis sem ac semper fringilla. Ut at tellus mattis, consequat elit ullamcorper, porta lacus. Morbi ut arcu gravida, rutrum libero vel, ultrices mauris." HorizontalOptions="StartAndExpand" FontSize="10"></Label>
+                        <StackLayout Orientation="Vertical">
+                            <ListView x:Name="ListaEstudios" ItemsSource="{Binding ListaEstudios}" ItemSelected="verEstudio" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Horizontal" Padding="5">
+                                                <Image Source="school.png" HorizontalOptions="Start"/>
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                    <Label 
+                                                        Text="{Binding escuela}" 
+                                                        HorizontalOptions="StartAndExpand" 
+                                                        FontSize="15">
+                                                    </Label>
+                                                    <Label 
+                                                        Text="{Binding carrera}" 
+                                                        HorizontalOptions="StartAndExpand" 
+                                                        FontSize="13">
+                                                    </Label>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Del " HorizontalOptions="Start" FontSize="10"/>
+                                                        <Label Text="{Binding fechaInicio}" HorizontalOptions="Start" FontSize="10"/>
+                                                        <Label Text="Al " HorizontalOptions="Start" FontSize="10"/>
+                                                        <Label Text="{Binding fechaFin}" HorizontalOptions="Start" FontSize="10"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                <Frame CornerRadius="10" Margin="3,5,3,5" >
+                <Frame CornerRadius="10" HeightRequest="200">
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="5">
                             <Label Text="Idiomas" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
@@ -102,7 +152,19 @@
                             </Button>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed augue vitae est iaculis pharetra at ut justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet ligula nec urna aliquet, eget tristique enim tincidunt. Nullam ipsum massa, porttitor sit amet convallis ut, volutpat eu nulla. Praesent aliquet lorem ut mi efficitur malesuada. Vivamus sodales risus nec lectus ultricies, non gravida sapien aliquet. Sed luctus tristique pretium. Sed eu arcu consequat, vestibulum neque a, condimentum elit. Vivamus eleifend arcu vel finibus interdum. Curabitur mattis sem ac semper fringilla. Ut at tellus mattis, consequat elit ullamcorper, porta lacus. Morbi ut arcu gravida, rutrum libero vel, ultrices mauris." HorizontalOptions="StartAndExpand" FontSize="10"></Label>
+                            <ListView x:Name="ListaIdiomas" ItemsSource="{Binding ListaIdiomas}" ItemSelected="verIdiomas" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Horizontal" Padding="5">
+                                                <Label Text="{Binding idioma}" HorizontalOptions="StartAndExpand" FontSize="15"/>
+                                                <Label Text="{Binding porcentaje}" HorizontalOptions="End" FontSize="15"/>
+                                                <Label Text="%" HorizontalOptions="Start" FontSize="15"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -110,5 +172,4 @@
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
-
 </ContentPage>

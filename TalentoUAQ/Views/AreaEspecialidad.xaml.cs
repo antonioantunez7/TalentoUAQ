@@ -82,9 +82,24 @@ namespace TalentoUAQ.Views
                 }
             });
         }
-        async void cerrarModal(object sender, EventArgs args)
+        async void guardarSubcategoria(object sender, EventArgs args)
         {
-            await Navigation.PopModalAsync();
+            var subcategoria = 0;
+            var posicionSubcategoria = cmbSubCategoriaD.SelectedIndex;
+            if (posicionSubcategoria > -1)
+            {
+                subcategoria = lsubcategorias[posicionSubcategoria].cveSubcategoria;
+            }
+            if (subcategoria == 0)
+            {
+                await DisplayAlert("Error", "Selecciona una subcategoria", "Aceptar");
+            }
+            else
+            {
+                await DisplayAlert("Correcto", "Se guardo el registro", "Aceptar");
+                await Navigation.PopAsync();
+            }
+
         }
     }
 }

@@ -3,31 +3,31 @@ using System.Collections.Generic;
 
 namespace TalentoUAQ.Models
 {
-    public class SubcategoriasUsuarios
+    public class IdiomasModel
     {
-        public SubcategoriasUsuarios()
+        public IdiomasModel()
         {
         }
 
-        public int idSubcategoriaUsuario
-        {
-            get;
-            set;
-        }
-
-        public int cveSubcategoria
+        public int idIdioma
         {
             get;
             set;
         }
 
-        public int idUsuarioExterno
+        public string idAspirante
         {
             get;
             set;
         }
 
-        public string desSubcategoria
+        public string idioma
+        {
+            get;
+            set;
+        }
+
+        public int porcentaje
         {
             get;
             set;
@@ -52,8 +52,9 @@ namespace TalentoUAQ.Models
         }
     }
 
-    public class ListaSubcategoriasUsuarios
+    public class ListaIdiomas
     {
-        public List<SubcategoriasUsuarios> listaSubcategoriasUsuarios { get; set; }
+        public List<IdiomasModel> listaIdiomas { get; set; }
     }
+
 }

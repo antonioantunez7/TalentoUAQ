@@ -173,6 +173,16 @@
     <AndroidResource Include="Resources\drawable\salir.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Empleo.png" />
+    <AndroidResource Include="Resources\drawable\empleoFondo.png" />
+    <AndroidResource Include="Resources\drawable\empleoGris.png" />
+    <AndroidResource Include="Resources\drawable\logoEmpleo.png" />
+    <AndroidResource Include="Resources\drawable\talento.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\emp.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="..\TalentoUAQ\TalentoUAQ.projitems" Label="Shared" Condition="Exists('..\TalentoUAQ\TalentoUAQ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

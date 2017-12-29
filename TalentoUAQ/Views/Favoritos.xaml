@@ -6,7 +6,7 @@
                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                 HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                 FontAttributes="Bold" FontFamily="Futura-Medium"
-                FontSize="20" TextColor="Maroon">
+                FontSize="20" TextColor="#6B9998">
             </Label>
             <StackLayout>
                 <ListView

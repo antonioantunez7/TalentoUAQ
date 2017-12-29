@@ -26,16 +26,16 @@
                                             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
                                                 <Label Text="{Binding titulo}" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" FontFamily="Futura-Medium" TextColor="#245664"></Label>
                                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                                  <Label FontSize="10" Text="{Binding fechaInicioOferta}" TextColor="Maroon" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                                                  <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="Querétaro" TextColor="Black"></Label>
+                                                    <Label FontSize="10" Text="{Binding fechaInicioOferta}" TextColor="Maroon" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                                                    <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="Querétaro" TextColor="Black"></Label>
                                                 </StackLayout>
                                                 <StackLayout Orientation="Horizontal">
-                                                  <Label FontSize="10" Text="Salario mensual: " TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                                                  <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding rangoSueldo}" TextColor="Maroon"></Label>
+                                                    <Image Source="logo.png" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
+                                                    <Image Source="logo.png" HorizontalOptions="FillAndExpand" WidthRequest="100"/>
                                                 </StackLayout>
                                                 <StackLayout Orientation="Horizontal">
-                                                  <Label FontSize="10" Text="Tipo de empleo: " TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                                                  <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="Tiempo completo" TextColor="Gray"></Label>
+                                                    <Label FontSize="10" Text="Tipo de empleo: " TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                                                    <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="Tiempo completo" TextColor="Gray"></Label>
                                                 </StackLayout>
                                                 <Label Text="{Binding descripcion}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
                                                 <Button x:Name="btnEnviarCorreo"

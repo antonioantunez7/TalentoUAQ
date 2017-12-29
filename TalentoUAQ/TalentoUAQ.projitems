@@ -90,6 +90,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\NivelesAcademicos.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Estados.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SubcategoriasUsuarios.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Estudios.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Experiencia.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Idiomas.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />

@@ -13,7 +13,6 @@
                             Clicked="agregarModalDescripcion"
                             FontFamily="Futura-Medium"
                             Text="Agregar"
-                            BackgroundColor="Navy"
                             TextColor="White"
                             VerticalOptions="Center">
                             </Button>
@@ -31,7 +30,6 @@
                                 Clicked="agregarModalEspecialidad"
                                 FontFamily="Futura-Medium"
                                 Text="Agregar"
-                                BackgroundColor="Navy"
                                 TextColor="White"
                                 VerticalOptions="Center">
                             </Button>
@@ -62,7 +60,6 @@
                                  Clicked="agregarModalExperiencia"
                                  FontFamily="Futura-Medium"
                                  Text="Agregar"
-                                 BackgroundColor="Navy"
                                  TextColor="White"
                                  VerticalOptions="Center">
                             </Button>
@@ -100,7 +97,6 @@
                                 Clicked="agregarModalEducacion"
                                 FontFamily="Futura-Medium"
                                 Text="Agregar"
-                                BackgroundColor="Navy"
                                 TextColor="White"
                                 VerticalOptions="Center">
                             </Button>
@@ -146,7 +142,6 @@
                             Clicked="agregarModalIdiomas"
                             FontFamily="Futura-Medium"
                             Text="Agregar"
-                            BackgroundColor="Navy"
                             TextColor="White"
                             VerticalOptions="Center">
                             </Button>

@@ -2,8 +2,8 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TalentoUAQ.App">
 	<Application.Resources>
 		<ResourceDictionary>
-			<Color x:Key="Primary">#8b8b8e</Color>
-			<Color x:Key="PrimaryDark">#8b8b8e</Color>
+			<Color x:Key="Primary">#6B9998</Color>
+			<Color x:Key="PrimaryDark">#6B9998</Color>
 			<Color x:Key="Accent">#96d1ff</Color>
 			<Color x:Key="LightBackgroundColor">#FAFAFA</Color>
 			<Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
@@ -13,6 +13,14 @@
 				<Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
 				<Setter Property="BarTextColor" Value="White" />
 			</Style>
+            <Style TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="#00aaa6" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#00aaa6" />
+            </Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

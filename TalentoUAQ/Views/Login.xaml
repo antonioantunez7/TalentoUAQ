@@ -8,7 +8,10 @@
                     Font="30"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                </Label>   
+                </Label>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="Empleo.png" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150" />
+                </StackLayout>
                 <Label Text="Iniciar sesión"
                     FontFamily="Futura-Medium"
                     HorizontalOptions="Center"
@@ -44,7 +47,6 @@
                     FontFamily="Futura-Medium"
                     Clicked="Ingresar_Clicked"
                     Text="Ingresar"
-                    BackgroundColor="Navy"
                     TextColor="White"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">

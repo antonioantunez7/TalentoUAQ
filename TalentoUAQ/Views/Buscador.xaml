@@ -80,7 +80,6 @@
                     Clicked="buscarEmpleo_Clicked"
                     FontFamily="Futura-Medium"
                     Text="Buscar empleo"
-                    BackgroundColor="Navy"
                     TextColor="White"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">

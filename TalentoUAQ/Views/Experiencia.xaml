@@ -56,7 +56,6 @@
                         Clicked="guardarExperiencia"
                         FontFamily="Futura-Medium"
                         Text="Guardar"
-                        BackgroundColor="Navy"
                         TextColor="White"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Center">

@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace TalentoUAQ.Droid
 {
-    [Activity(Label = "Talento UAQ", Icon = "@drawable/logo", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Talento UAQ", Icon = "@drawable/logoEmpleo", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

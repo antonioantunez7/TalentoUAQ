@@ -9,93 +9,146 @@ namespace TalentoUAQ.Models
         {
         }
 
-        public int idOferta{
+        public int idOferta
+        {
             get;
             set;
         }
 
-        public string titulo{
+        public string titulo
+        {
             get;
             set;
         }
 
-        public string descripcion{
+        public string descripcion
+        {
             get;
             set;
         }
 
-        public int sueldoInicio{
+        public int sueldoInicio
+        {
             get;
             set;
         }
 
-        public int sueldoFin{
+        public int sueldoFin
+        {
             get;
             set;
         }
 
-        public string fechaInicioOferta{
+        public string fechaInicioOferta
+        {
             get;
             set;
         }
 
-        public string fechaFinOferta{
+        public string fechaFinOferta
+        {
             get;
             set;
         }
 
-        public int cveEmpresa{
+        public int cveEmpresa
+        {
             get;
             set;
         }
 
-        public string nombreContacto{
+        public string nombreContacto
+        {
             get;
             set;
         }
 
-        public string correoContacto{
+        public string correoContacto
+        {
             get;
             set;
         }
 
-        public string telefonoContacto{
+        public string telefonoContacto
+        {
             get;
             set;
         }
 
-        public int cveTipoEmpleo{
+        public int cveTipoEmpleo
+        {
             get;
             set;
         }
 
-        public int cveSubcategoria{
+        public int cveSubcategoria
+        {
             get;
             set;
         }
 
-        public int cveMunicipio{
+        public int cveMunicipio
+        {
             get;
             set;
         }
 
         //Auxiliares para poder consultar
-        public string rangoSueldo{
+        public string rangoSueldo
+        {
             get;
             set;
         }
 
-        public string nombreBoton{
+        public string nombreBoton
+        {
             get;
             set;
         }
 
-        public int cveEstado{
+        public int cveEstado
+        {
             get;
             set;
         }
 
-        public int cveCategoria{
+        public int cveCategoria
+        {
+            get;
+            set;
+        }
+
+        public string descTipoEmpleo{
+            get;
+            set;
+        }
+
+        public string descMunicipioEstado{
+            get;
+            set;
+        }
+
+        public string descCategoria{
+            get;
+            set;
+        }
+
+        public string descSubcategoria{
+            get;
+            set;
+        }
+
+        public string nombreEmpresa{
+            get;
+            set;
+        }
+
+        public string descMunicipio{
+            get;
+            set;
+        }
+
+        public string descEstado{
             get;
             set;
         }

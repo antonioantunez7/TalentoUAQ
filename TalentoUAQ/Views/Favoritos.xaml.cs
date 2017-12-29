@@ -25,7 +25,7 @@ namespace TalentoUAQ.Views
             {
                 RestClient cliente = new RestClient();
 
-                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/0/sueldoInicio/0/sueldoFin/0/fechaInicioOferta/0/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0/cveEstado/0");
+                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/0/sueldoInicio/0/sueldoFin/0/fechaInicioOferta/0/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveCategoria/0/cveMunicipio/0/cveEstado/0");
                 if (ofertasResp != null)
                 {
                     if (ofertasResp.listaOfertas.Count > 0)
@@ -39,10 +39,18 @@ namespace TalentoUAQ.Views
                                 sueldoInicio = ofertax.sueldoInicio,
                                 sueldoFin = ofertax.sueldoFin,
                                 correoContacto = ofertax.correoContacto,
-                                fechaInicioOferta = this.fechaSQLaNormal(ofertax.fechaInicioOferta),
+                                fechaInicioOferta = this.fechaSQLaNormalSH(ofertax.fechaInicioOferta),
+                                //fechaInicioOferta = this.fechaSQLaNormal(ofertax.fechaInicioOferta),
                                 descripcion = ofertax.descripcion,
                                 rangoSueldo = "$" + ofertax.sueldoInicio + " MXN - $" + ofertax.sueldoFin + "MXN",
-                                nombreBoton = "Eliminar de favoritos"
+                                nombreBoton = "Eliminar de favoritos",
+                                nombreEmpresa = ofertax.nombreEmpresa,
+                                descCategoria = ofertax.descCategoria,
+                                descSubcategoria = ofertax.descSubcategoria,
+                                descTipoEmpleo = ofertax.descTipoEmpleo,
+                                descMunicipioEstado = ofertax.descMunicipio + ", " + ofertax.descEstado,
+                                telefonoContacto = ofertax.telefonoContacto,
+                                nombreContacto = ofertax.nombreContacto
                             });
                         }
                         listaFavoritos.ItemsSource = ofertas;
@@ -73,6 +81,12 @@ namespace TalentoUAQ.Views
             string[] fechaHoralNormal = fecha.Split('T');
             string[] fechaNormal = fechaHoralNormal[0].Split('-');
             return fechaNormal[2] + "/" + fechaNormal[1] + "/" + fechaNormal[0];
+        }
+
+        public string fechaSQLaNormalSH(string fecha)
+        {
+            string[] fechaHoralNormal = fecha.Split(' ');
+            return fechaHoralNormal[0];
         }
     }
 }

@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="fondo.jpg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="talento.png">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                             </imageView>
                         </subviews>
                     </view>
@@ -36,5 +36,18 @@
         <image name="xamarin_logo.png" width="220" height="51"/>
         <image name="logo.png" width="96" height="96"/>
         <image name="fondo.jpg" width="400" height="600"/>
+        <image name="acerca.png" width="32" height="32"/>
+        <image name="buscador2.png" width="48" height="48"/>
+        <image name="cuenta2.png" width="32" height="32"/>
+        <image name="cv2.png" width="32" height="32"/>
+        <image name="favoritos2.png" width="48" height="48"/>
+        <image name="sugerencias.png" width="32" height="32"/>
+        <image name="salir.png" width="32" height="32"/>
+        <image name="Empleo.png" width="364" height="300"/>
+        <image name="empleoFondo.png" width="134" height="124"/>
+        <image name="empleoGris.png" width="167" height="133"/>
+        <image name="logoEmpleo.png" width="208" height="202"/>
+        <image name="talento.png" width="500" height="760"/>
+        <image name="emp.jpg" width="1980" height="350"/>
     </resources>
 </document>

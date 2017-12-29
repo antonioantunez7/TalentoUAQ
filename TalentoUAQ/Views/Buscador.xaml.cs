@@ -67,7 +67,7 @@ namespace TalentoUAQ.Views
             var posicion = cmbCategoria.SelectedIndex;
             if (posicion > -1)
             {
-                cargaSubcategorias(lcategorias[posicion].cveCategoria);
+                //cargaSubcategorias(lcategorias[posicion].cveCategoria);
             }
         }
 

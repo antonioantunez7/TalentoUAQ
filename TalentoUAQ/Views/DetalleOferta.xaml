@@ -25,19 +25,47 @@
                                         <ScrollView Grid.Row="1">
                                             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
                                                 <Label Text="{Binding titulo}" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" FontFamily="Futura-Medium" TextColor="#245664"></Label>
+                                                <StackLayout Orientation="Horizontal" HeightRequest="20"></StackLayout>
                                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                                     <Label FontSize="10" Text="{Binding fechaInicioOferta}" TextColor="Maroon" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                                                    <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="Querétaro" TextColor="Black"></Label>
+                                                    <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding descMunicipioEstado}" TextColor="Black"></Label>
                                                 </StackLayout>
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label FontSize="10" Text="Tipo de empleo: " TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                                                    <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="Tiempo completo" TextColor="Maroon" FontAttributes="Bold"></Label>
+                                                    <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding descTipoEmpleo}" TextColor="Maroon" FontAttributes="Bold"></Label>
                                                 </StackLayout>
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label FontSize="10" Text="Salario: " TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
                                                     <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding rangoSueldo}" TextColor="Maroon" FontAttributes="Bold"></Label>
                                                 </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label FontSize="10" Text="Categoría: " TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                                                    <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding descCategoria}" TextColor="Maroon" FontAttributes="Bold"></Label>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label FontSize="10" Text="Subcategoría: " TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                                                    <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding descSubcategoria}" TextColor="Maroon" FontAttributes="Bold"></Label>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" HeightRequest="20"></StackLayout>
                                                 <Label Text="{Binding descripcion}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <StackLayout Orientation="Horizontal" HeightRequest="20"></StackLayout>
+                                                <Frame>
+                                                    <StackLayout Orientation="Vertical">
+                                                            <Label HorizontalOptions="Center" Text="Datos del contacto" FontSize="18" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="Maroon"/>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="10" Text="Nombre: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150"/>
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding nombreContacto}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="8" Text="Correo electrónico: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="8" HorizontalOptions="FillAndExpand" Text="{Binding correoContacto}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="8" Text="Teléfono: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="8" HorizontalOptions="FillAndExpand" Text="{Binding telefonoContacto}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </Frame>
                                                 <Button x:Name="btnEnviarCorreo"
                                                     Clicked="enviarCorrero"
                                                     FontFamily="Futura-Medium"

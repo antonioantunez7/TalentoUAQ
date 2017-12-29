@@ -23,7 +23,14 @@ namespace TalentoUAQ.Views
                     sueldoFin = oferta.sueldoFin,
                     rangoSueldo = oferta.rangoSueldo,
                     nombreBoton = oferta.nombreBoton,
-                    fechaInicioOferta = oferta.fechaInicioOferta
+                    fechaInicioOferta = oferta.fechaInicioOferta,
+                    descMunicipioEstado = oferta.descMunicipioEstado,
+                    descTipoEmpleo = oferta.descTipoEmpleo,
+                    descCategoria = oferta.descCategoria,
+                    descSubcategoria = oferta.descSubcategoria,
+                    correoContacto = oferta.correoContacto,
+                    telefonoContacto = oferta.telefonoContacto,
+                    nombreContacto = oferta.nombreContacto
                 }
             };
             correoContacto = oferta.correoContacto;

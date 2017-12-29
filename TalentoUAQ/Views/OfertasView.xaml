@@ -24,8 +24,8 @@
                                             </StackLayout>
                                             <Label HorizontalOptions="Center" Text="{Binding titulo}" FontSize="18" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="#245664"/>
                                             <StackLayout Orientation="Horizontal">
-                                              <Label FontSize="12" Text="Bimbo S.A. de C.V." TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="200" />
-                                              <Label FontSize="12" HorizontalOptions="FillAndExpand" Text="Querétaro" TextColor="Gray"></Label>
+                                              <Label FontSize="8" Text="{Binding nombreEmpresa}" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="200" />
+                                              <Label FontSize="8" HorizontalOptions="FillAndExpand" Text="{Binding descMunicipioEstado}" TextColor="Gray"></Label>
                                             </StackLayout>
                                         </StackLayout>
                                     </StackLayout>

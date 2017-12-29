@@ -21,6 +21,13 @@
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#00aaa6" />
             </Style>
+            <Style TargetType="Frame">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Margin" Value="3,5,3,5" />
+                <Setter Property="OutlineColor" Value="#00aaa6" />
+                <Setter Property="HasShadow" Value="false" />
+                <Setter Property="BackgroundColor" Value="#FBFBFB" />
+            </Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

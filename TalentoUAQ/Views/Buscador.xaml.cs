@@ -160,7 +160,9 @@ namespace TalentoUAQ.Views
                 cveSubcategoria = cveSubcategoria,
                 sueldoInicio = sueldoInicio,
                 sueldoFin = sueldoFin,
-                fechaInicioOferta = fechaInicioOferta
+                fechaInicioOferta = fechaInicioOferta,
+                cveCategoria = cveCategoria,
+                cveEstado = cveEstado
             };
             await Navigation.PushAsync(new OfertasView(oferta));
         }

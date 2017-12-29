@@ -67,6 +67,9 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+                 <Frame>
+                                    
+                                </Frame>
             </StackLayout>
         </ScrollView>
     </Grid>

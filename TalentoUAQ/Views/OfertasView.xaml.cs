@@ -40,12 +40,23 @@ namespace TalentoUAQ.Views
                     sueldoFin = "" + oferta.sueldoFin;
                 }
                 string fechaInicioOferta = oferta.fechaInicioOferta;
-                Console.WriteLine("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/" + fechaInicioOferta + "/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0");
+
+                string cveEstado = "0";
+                if (oferta.cveEstado != 0)
+                {
+                    cveEstado = "" + oferta.cveEstado;
+                }
+                string cveCategoria = "0";
+                if (oferta.cveCategoria != 0)
+                {
+                    cveCategoria = "" + oferta.cveCategoria;
+                }
+                Console.WriteLine("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/" + fechaInicioOferta + "/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0/cveEstado/0");
                 Debug.Write("\nfechaDesde: [");
                 Debug.Write(fechaInicioOferta);
                 Debug.Write("\n]");
                 Debug.Write("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0");
-                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/"+titulo+"/sueldoInicio/"+sueldoInicio+"/sueldoFin/"+sueldoFin+"/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0");
+                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/"+titulo+"/sueldoInicio/"+sueldoInicio+"/sueldoFin/"+sueldoFin+"/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveMunicipio/0/cveEstado/"+cveEstado);
                 if (ofertasResp != null)
                 {
                     if (ofertasResp.listaOfertas.Count > 0)

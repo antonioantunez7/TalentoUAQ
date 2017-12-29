@@ -79,12 +79,23 @@ namespace TalentoUAQ.Models
             set;
         }
 
+        //Auxiliares para poder consultar
         public string rangoSueldo{
             get;
             set;
         }
 
         public string nombreBoton{
+            get;
+            set;
+        }
+
+        public int cveEstado{
+            get;
+            set;
+        }
+
+        public int cveCategoria{
             get;
             set;
         }

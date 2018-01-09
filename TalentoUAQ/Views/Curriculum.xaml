@@ -17,8 +17,10 @@
                             VerticalOptions="Center">
                             </Button>
                         </StackLayout>
-                        <StackLayout>
-                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed augue vitae est iaculis pharetra at ut justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet ligula nec urna aliquet, eget tristique enim tincidunt. Nullam ipsum massa, porttitor sit amet convallis ut, volutpat eu nulla. Praesent aliquet lorem ut mi efficitur malesuada. Vivamus sodales risus nec lectus ultricies, non gravida sapien aliquet. Sed luctus tristique pretium. Sed eu arcu consequat, vestibulum neque a, condimentum elit. Vivamus eleifend arcu vel finibus interdum. Curabitur mattis sem ac semper fringilla. Ut at tellus mattis, consequat elit ullamcorper, porta lacus. Morbi ut arcu gravida, rutrum libero vel, ultrices mauris." HorizontalOptions="StartAndExpand" FontSize="10"></Label>
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <ScrollView>
+                                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed augue vitae est iaculis pharetra at ut justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet ligula nec urna aliquet, eget tristique enim tincidunt. Nullam ipsum massa, porttitor sit amet convallis ut, volutpat eu nulla. Praesent aliquet lorem ut mi efficitur malesuada. Vivamus sodales risus nec lectus ultricies, non gravida sapien aliquet. Sed luctus tristique pretium. Sed eu arcu consequat, vestibulum neque a, condimentum elit. Vivamus eleifend arcu vel finibus interdum. Curabitur mattis sem ac semper fringilla. Ut at tellus mattis, consequat elit ullamcorper, porta lacus. Morbi ut arcu gravida, rutrum libero vel, ultrices mauris." HorizontalOptions="StartAndExpand" FontSize="10"></Label>
+                            </ScrollView>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -34,7 +36,7 @@
                                 VerticalOptions="Center">
                             </Button>
                         </StackLayout>
-                        <StackLayout VerticalOptions="Fill" >
+                        <StackLayout VerticalOptions="FillAndExpand" >
                             <ScrollView>
                                 <ListView x:Name="ListaSubcategoriasUsuarios" ItemsSource="{Binding ListaSubcategoriasUsuarios}" ItemSelected="eliminarEspecialidad_ItemSelected" HasUnevenRows="True" VerticalOptions="FillAndExpand">
                                     <ListView.ItemTemplate>
@@ -64,28 +66,30 @@
                                  VerticalOptions="Center">
                             </Button>
                         </StackLayout>
-                        <StackLayout Orientation="Vertical">
-                            <ListView x:Name="ListaExperiencia" ItemsSource="{Binding ListaExperiencia}" ItemSelected="verExperiencia" HasUnevenRows="True" VerticalOptions="FillAndExpand">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout Orientation="Horizontal" Padding="5">
-                                                <Image Source="work.png" HorizontalOptions="Start"/>
-                                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                                                    <Label Text="{Binding empresa}" HorizontalOptions="Start" FontSize="15"/>
-                                                    <Label Text="{Binding puesto}" HorizontalOptions="Start" FontSize="13"/>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Label Text="Del " HorizontalOptions="Start" FontSize="10"/>
-                                                        <Label Text="{Binding fechaInicio}" HorizontalOptions="Start" FontSize="10"/>
-                                                        <Label Text="Al " HorizontalOptions="Start" FontSize="10"/>
-                                                        <Label Text="{Binding fechaFin}" HorizontalOptions="Start" FontSize="10"/>
+                        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                            <ScrollView>
+                                <ListView x:Name="ListaExperiencia" ItemsSource="{Binding ListaExperiencia}" ItemSelected="verExperiencia" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Orientation="Horizontal" Padding="5">
+                                                    <Image Source="work.png" HorizontalOptions="Start"/>
+                                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                        <Label Text="{Binding empresa}" HorizontalOptions="Start" FontSize="15"/>
+                                                        <Label Text="{Binding puesto}" HorizontalOptions="Start" FontSize="13"/>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label Text="Del " HorizontalOptions="Start" FontSize="10"/>
+                                                            <Label Text="{Binding fechaInicio}" HorizontalOptions="Start" FontSize="10"/>
+                                                            <Label Text="Al " HorizontalOptions="Start" FontSize="10"/>
+                                                            <Label Text="{Binding fechaFin}" HorizontalOptions="Start" FontSize="10"/>
+                                                        </StackLayout>
                                                     </StackLayout>
                                                 </StackLayout>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -101,36 +105,38 @@
                                 VerticalOptions="Center">
                             </Button>
                         </StackLayout>
-                        <StackLayout Orientation="Vertical">
-                            <ListView x:Name="ListaEstudios" ItemsSource="{Binding ListaEstudios}" ItemSelected="verEstudio" HasUnevenRows="True" VerticalOptions="FillAndExpand">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout Orientation="Horizontal" Padding="5">
-                                                <Image Source="school.png" HorizontalOptions="Start"/>
-                                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                                                    <Label 
-                                                        Text="{Binding escuela}" 
-                                                        HorizontalOptions="StartAndExpand" 
-                                                        FontSize="15">
-                                                    </Label>
-                                                    <Label 
-                                                        Text="{Binding carrera}" 
-                                                        HorizontalOptions="StartAndExpand" 
-                                                        FontSize="13">
-                                                    </Label>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Label Text="Del " HorizontalOptions="Start" FontSize="10"/>
-                                                        <Label Text="{Binding fechaInicio}" HorizontalOptions="Start" FontSize="10"/>
-                                                        <Label Text="Al " HorizontalOptions="Start" FontSize="10"/>
-                                                        <Label Text="{Binding fechaFin}" HorizontalOptions="Start" FontSize="10"/>
+                        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                            <ScrollView>
+                                <ListView x:Name="ListaEstudios" ItemsSource="{Binding ListaEstudios}" ItemSelected="verEstudio" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Orientation="Horizontal" Padding="5">
+                                                    <Image Source="school.png" HorizontalOptions="Start"/>
+                                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                        <Label 
+                                                            Text="{Binding escuela}" 
+                                                            HorizontalOptions="StartAndExpand" 
+                                                            FontSize="15">
+                                                        </Label>
+                                                        <Label 
+                                                            Text="{Binding carrera}" 
+                                                            HorizontalOptions="StartAndExpand" 
+                                                            FontSize="13">
+                                                        </Label>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label Text="Del " HorizontalOptions="Start" FontSize="10"/>
+                                                            <Label Text="{Binding fechaInicio}" HorizontalOptions="Start" FontSize="10"/>
+                                                            <Label Text="Al " HorizontalOptions="Start" FontSize="10"/>
+                                                            <Label Text="{Binding fechaFin}" HorizontalOptions="Start" FontSize="10"/>
+                                                        </StackLayout>
                                                     </StackLayout>
                                                 </StackLayout>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -146,20 +152,22 @@
                             VerticalOptions="Center">
                             </Button>
                         </StackLayout>
-                        <StackLayout>
-                            <ListView x:Name="ListaIdiomas" ItemsSource="{Binding ListaIdiomas}" ItemSelected="verIdiomas" HasUnevenRows="True" VerticalOptions="FillAndExpand">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout Orientation="Horizontal" Padding="5">
-                                                <Label Text="{Binding idioma}" HorizontalOptions="StartAndExpand" FontSize="15"/>
-                                                <Label Text="{Binding porcentaje}" HorizontalOptions="End" FontSize="15"/>
-                                                <Label Text="%" HorizontalOptions="Start" FontSize="15"/>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <ScrollView>
+                                <ListView x:Name="ListaIdiomas" ItemsSource="{Binding ListaIdiomas}" ItemSelected="verIdiomas" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Orientation="Horizontal" Padding="5">
+                                                    <Label Text="{Binding idioma}" HorizontalOptions="StartAndExpand" FontSize="15"/>
+                                                    <Label Text="{Binding porcentaje}" HorizontalOptions="End" FontSize="15"/>
+                                                    <Label Text="%" HorizontalOptions="Start" FontSize="15"/>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -168,3 +176,4 @@
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
+

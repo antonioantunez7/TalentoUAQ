@@ -57,12 +57,12 @@
                                                           <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding nombreContacto}" TextColor="Gray"></Label>
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal">
-                                                          <Label FontSize="8" Text="Correo electrónico: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
-                                                          <Label FontSize="8" HorizontalOptions="FillAndExpand" Text="{Binding correoContacto}" TextColor="Gray"></Label>
+                                                          <Label FontSize="10" Text="Correo electrónico: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding correoContacto}" TextColor="Gray"></Label>
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal">
-                                                          <Label FontSize="8" Text="Teléfono: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
-                                                          <Label FontSize="8" HorizontalOptions="FillAndExpand" Text="{Binding telefonoContacto}" TextColor="Gray"></Label>
+                                                          <Label FontSize="10" Text="Teléfono: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding telefonoContacto}" TextColor="Gray"></Label>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>

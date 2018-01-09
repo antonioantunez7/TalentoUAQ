@@ -62,16 +62,17 @@ namespace TalentoUAQ.Views
             }
         }
 
-        void seleccionaCategoria_SelectedIndexChanged(object sender, System.EventArgs e)
+        async void seleccionaCategoria_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             var posicion = cmbCategoria.SelectedIndex;
             if (posicion > -1)
             {
-                //cargaSubcategorias(lcategorias[posicion].cveCategoria);
+                //await DisplayAlert("Información", lcategorias[posicion].cveCategoria + " " + lcategorias[posicion].descCategoria, "Aceptar");
+                cargaSubcategorias(lcategorias[posicion].cveCategoria);
             }
         }
 
-        async void cargaSubcategorias(int cveCategoria){
+        /*async void cargaSubcategorias(int cveCategoria){
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
@@ -100,6 +101,31 @@ namespace TalentoUAQ.Views
                 }
             });          
 
+        }*/
+
+        void cargaSubcategorias(int cveCategoria)
+        {
+            lsubcategorias = new List<Subcategorias>();
+            lsubcategorias.Add(new Subcategorias
+            {
+                cveSubcategoria = 0,
+                descSubcategoria = "Todas"
+            });
+            //Codigo por quitar y dejar el de arriba 
+            if (cveCategoria == 17){//17:Tecnologías de la Información / Sistemas
+                lsubcategorias.Add(new Subcategorias { cveSubcategoria = 232, descSubcategoria = "TELECOMUNICACIONES Y SISTEMAS MÓVILES" });
+                lsubcategorias.Add(new Subcategorias { cveSubcategoria = 233, descSubcategoria = "ADMINISTRACIÓN DE BASES DE DATOS" });
+                lsubcategorias.Add(new Subcategorias { cveSubcategoria = 234, descSubcategoria = "ADMINISTRACIÓN DE PROYECTOS DE TI" });
+                lsubcategorias.Add(new Subcategorias { cveSubcategoria = 235, descSubcategoria = "ADMINISTRACIÓN DE SERVIDORES" });
+                lsubcategorias.Add(new Subcategorias { cveSubcategoria = 239, descSubcategoria = "DESARROLLADOR / PROGRAMADOR DE SOFTWARE" });
+                lsubcategorias.Add(new Subcategorias { cveSubcategoria = 240, descSubcategoria = "DESARROLLADOR / PROGRAMADOR WEB" });
+                lsubcategorias.Add(new Subcategorias { cveSubcategoria = 251, descSubcategoria = "SISTEMAS INFORMÁTICOS" });
+            }
+            cmbSubCategoria.Items.Clear();
+            foreach (var subcategoria in lsubcategorias)
+            {
+                cmbSubCategoria.Items.Add(subcategoria.descSubcategoria);
+            }
         }
 
         async void buscarEmpleo_Clicked(object sender, System.EventArgs e)

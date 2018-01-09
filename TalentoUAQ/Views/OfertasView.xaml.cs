@@ -51,11 +51,16 @@ namespace TalentoUAQ.Views
                 {
                     cveCategoria = "" + oferta.cveCategoria;
                 }
-                Console.WriteLine("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/" + fechaInicioOferta + "/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveCategoria/0/cveMunicipio/0/cveEstado/0");
+                string cveSubcategoria = "0";
+                if (oferta.cveSubcategoria != 0)
+                {
+                    cveSubcategoria = ""+oferta.cveSubcategoria;     
+                }
+                Console.WriteLine("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/" + fechaInicioOferta + "/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/"+cveSubcategoria+"/cveCategoria/"+cveCategoria+"/cveMunicipio/0/cveEstado/0");
                 Debug.Write("\nfechaDesde: [");
                 Debug.Write(fechaInicioOferta);
                 Debug.Write("\n]");
-                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/"+titulo+"/sueldoInicio/"+sueldoInicio+"/sueldoFin/"+sueldoFin+"/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveCategoria/"+cveCategoria+"/cveMunicipio/0/cveEstado/"+cveEstado);
+                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/"+titulo+"/sueldoInicio/"+sueldoInicio+"/sueldoFin/"+sueldoFin+"/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/"+cveSubcategoria+"/cveCategoria/"+cveCategoria+"/cveMunicipio/0/cveEstado/"+cveEstado);
                 if (ofertasResp != null)
                 {
                     if (ofertasResp.listaOfertas.Count > 0)

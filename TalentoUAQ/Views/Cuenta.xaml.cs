@@ -53,6 +53,17 @@ namespace TalentoUAQ.Views
                     var resp = await this.DisplayAlert("Confirmación", "¿Desea cerrar sesión?", "SI", "NO");
                     if (resp)
                     {
+                        //Destruye las variables de sesión (persistencia de los datos)
+                        if (Application.Current.Properties.ContainsKey("idUsuario")
+                            && Application.Current.Properties.ContainsKey("nombre") 
+                            && Application.Current.Properties.ContainsKey("paterno") 
+                            && Application.Current.Properties.ContainsKey("materno"))
+                        {
+                            Application.Current.Properties.Remove("idUsuario");
+                            Application.Current.Properties.Remove("nombre");
+                            Application.Current.Properties.Remove("paterno");
+                            Application.Current.Properties.Remove("materno");
+                        }
                         Application.Current.MainPage = new NavigationPage(new Login());
                     }
                 } else {

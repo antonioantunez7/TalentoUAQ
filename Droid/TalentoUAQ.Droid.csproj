@@ -149,9 +149,6 @@
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\drawable\logo.png" />
-    <AndroidResource Include="Resources\drawable\fondo.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable\acerca.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidResource>
@@ -181,6 +178,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\emp.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\eliminar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\school.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\work.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidResource>
   </ItemGroup>

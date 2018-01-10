@@ -38,9 +38,17 @@ namespace TalentoUAQ.Views
                 waitActivityIndicador.IsRunning = false;//Quita el de cargando
                 if (eventos != null)
                 {
-                    Usuarios usuario = new Usuarios { idUsuario = 1, nombre = txtUsuario.Text, paterno = "Prueba", materno = "Prueba" };
+                    int idUsuario = 1;
+                    string nombre = txtUsuario.Text;
+                    string paterno = "Paterno";
+                    string materno = "Materno";
+                    //Guarda las variables en la app, persistencia de los datos
+                    Application.Current.Properties["idUsuario"] = 1;
+                    Application.Current.Properties["nombre"] = nombre;
+                    Application.Current.Properties["paterno"] = "Paterno";
+                    Application.Current.Properties["materno"] = "Materno";
+                    Usuarios usuario = new Usuarios { idUsuario = idUsuario, nombre = nombre, paterno = paterno, materno = materno };
                     Application.Current.MainPage = new NavigationPage(new MainPage(usuario));//Reemplaza la pagina
-
                 }
                 else
                 {

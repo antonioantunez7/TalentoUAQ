@@ -179,6 +179,15 @@
     <BundleResource Include="Resources\emp.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </BundleResource>
+    <BundleResource Include="Resources\eliminar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\school.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\work.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />

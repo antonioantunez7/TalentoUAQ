@@ -72,7 +72,7 @@ namespace TalentoUAQ.Views
             }
         }
 
-        /*async void cargaSubcategorias(int cveCategoria){
+        async void cargaSubcategorias(int cveCategoria){
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
@@ -101,9 +101,9 @@ namespace TalentoUAQ.Views
                 }
             });          
 
-        }*/
+        }
 
-        void cargaSubcategorias(int cveCategoria)
+        /*void cargaSubcategorias(int cveCategoria)
         {
             lsubcategorias = new List<Subcategorias>();
             lsubcategorias.Add(new Subcategorias
@@ -126,7 +126,7 @@ namespace TalentoUAQ.Views
             {
                 cmbSubCategoria.Items.Add(subcategoria.descSubcategoria);
             }
-        }
+        }*/
 
         async void buscarEmpleo_Clicked(object sender, System.EventArgs e)
         {

@@ -38,11 +38,13 @@
                 <StackLayout Orientation="Horizontal">
                     <DatePicker x:Name="fechaInicio"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="Center"
+                        Format="dd/MM/yyyy">
                     </DatePicker>
                     <DatePicker x:Name="fechaFin"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="Center"
+                        Format="dd/MM/yyyy">
                     </DatePicker>
                 </StackLayout>
                 <Button x:Name="btnGuardar"

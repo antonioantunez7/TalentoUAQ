@@ -15,17 +15,14 @@ namespace TalentoUAQ.Views
             InitializeComponent();
             cargaFavoritos();
         }
-
         async void cargaFavoritos()
         {
             etiquetaCargando.Text = "Cargando favoritos, por favor espere...";
             svFavoritos.Content = etiquetaCargando;
-
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-
-                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/0/sueldoInicio/0/sueldoFin/0/fechaInicioOferta/0/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/0/cveCategoria/0/cveMunicipio/0/cveEstado/0");
+                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertas/favoritos/usuario/" + Application.Current.Properties["idUsuarioExterno"]);
                 if (ofertasResp != null)
                 {
                     if (ofertasResp.listaOfertas.Count > 0)
@@ -39,7 +36,7 @@ namespace TalentoUAQ.Views
                                 sueldoInicio = ofertax.sueldoInicio,
                                 sueldoFin = ofertax.sueldoFin,
                                 correoContacto = ofertax.correoContacto,
-                                fechaInicioOferta = this.fechaSQLaNormalSH(ofertax.fechaInicioOferta),
+                                fechaInicioOferta =ofertax.fechaInicioOferta,
                                 //fechaInicioOferta = this.fechaSQLaNormal(ofertax.fechaInicioOferta),
                                 descripcion = ofertax.descripcion,
                                 rangoSueldo = "$" + ofertax.sueldoInicio + " MXN - $" + ofertax.sueldoFin + "MXN",

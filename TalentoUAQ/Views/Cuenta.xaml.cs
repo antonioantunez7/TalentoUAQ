@@ -57,12 +57,16 @@ namespace TalentoUAQ.Views
                         if (Application.Current.Properties.ContainsKey("idUsuario")
                             && Application.Current.Properties.ContainsKey("nombre") 
                             && Application.Current.Properties.ContainsKey("paterno") 
-                            && Application.Current.Properties.ContainsKey("materno"))
+                            && Application.Current.Properties.ContainsKey("materno")
+                            && Application.Current.Properties.ContainsKey("idUsuarioExterno")
+                            && Application.Current.Properties.ContainsKey("idAspirante"))
                         {
                             Application.Current.Properties.Remove("idUsuario");
                             Application.Current.Properties.Remove("nombre");
                             Application.Current.Properties.Remove("paterno");
                             Application.Current.Properties.Remove("materno");
+                            Application.Current.Properties.Remove("idUsuarioExterno");
+                            Application.Current.Properties.Remove("idAspirante");
                         }
                         Application.Current.MainPage = new NavigationPage(new Login());
                     }

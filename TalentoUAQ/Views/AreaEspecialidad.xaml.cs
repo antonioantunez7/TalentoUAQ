@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using TalentoUAQ.Models;
 using TalentoUAQ.Services;
 using Xamarin.Forms;
@@ -96,8 +97,29 @@ namespace TalentoUAQ.Views
             }
             else
             {
-                await DisplayAlert("Correcto", "Se guardo el registro", "Aceptar");
-                await Navigation.PopAsync();
+                HttpClient cliente = new HttpClient();
+                var formContent = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("idUsuarioExterno", "1"),
+                    new KeyValuePair<string, string>("cveSubcategoria",subcategoria.ToString()),
+                    new KeyValuePair<string, string>("activo","S"),
+                });
+
+                var myHttpClient = new HttpClient();
+                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/subcategoriasusuario/guardar", formContent);
+
+                var json = await response.Content.ReadAsStringAsync();
+                if (response.IsSuccessStatusCode)
+                {
+                    await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
+                    var detalle = new Curriculum();
+                    detalle.cargarGeneral();
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Algo Salio Mal", "Aceptar");
+                }
             }
 
         }

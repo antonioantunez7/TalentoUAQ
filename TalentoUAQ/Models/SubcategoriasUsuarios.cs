@@ -27,7 +27,7 @@ namespace TalentoUAQ.Models
             set;
         }
 
-        public string desSubcategoria
+        public string descSubcategoria
         {
             get;
             set;

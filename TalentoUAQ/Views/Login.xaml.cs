@@ -44,10 +44,12 @@ namespace TalentoUAQ.Views
                     string materno = "Materno";
                     //Guarda las variables en la app, persistencia de los datos
                     Application.Current.Properties["idUsuario"] = 1;
-                    Application.Current.Properties["nombre"] = nombre;
-                    Application.Current.Properties["paterno"] = "Paterno";
-                    Application.Current.Properties["materno"] = "Materno";
-                    Usuarios usuario = new Usuarios { idUsuario = idUsuario, nombre = nombre, paterno = paterno, materno = materno };
+                    Application.Current.Properties["nombre"] = "Eduardo";
+                    Application.Current.Properties["paterno"] = "Sanchez";
+                    Application.Current.Properties["materno"] = "Zarco";
+                    Application.Current.Properties["idUsuarioExterno"] = "1";
+                    Application.Current.Properties["idAspirante"] = "1";
+                    Usuarios usuario = new Usuarios { idUsuario = idUsuario, nombre = nombre, paterno = paterno, materno = materno,idAspirante = Application.Current.Properties["idAspirante"].ToString(),idUsuarioExterno = Application.Current.Properties["idUsuarioExterno"].ToString()};
                     Application.Current.MainPage = new NavigationPage(new MainPage(usuario));//Reemplaza la pagina
                 }
                 else

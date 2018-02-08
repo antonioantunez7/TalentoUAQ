@@ -42,7 +42,16 @@ namespace TalentoUAQ.Models
             get;
             set;
         }
-
+        public string idUsuarioExterno
+        {
+            get;
+            set;
+        }
+        public string idAspirante
+        {
+            get;
+            set;
+        }
     }
 
     public class ListaUsuarios

@@ -9,59 +9,15 @@ namespace TalentoUAQ.Models
         {
         }
 
-        public int idEstudio
-        {
-            get;
-            set;
-        }
-
-        public string idAspirante
-        {
-            get;
-            set;
-        }
-
-        public string escuela
-        {
-            get;
-            set;
-        }
-
-        public string carrera
-        {
-            get;
-            set;
-        }
-
-        public string fechaInicio
-        {
-            get;
-            set;
-        }
-
-        public string fechaFin
-        {
-            get;
-            set;
-        }
-
-        public string activo
-        {
-            get;
-            set;
-        }
-
-        public string fechaRegistro
-        {
-            get;
-            set;
-        }
-
-        public string fechaActualizacion
-        {
-            get;
-            set;
-        }
+        public int idEscolaridad { get;set;}
+        public string idAspirante { get;set;}
+        public string escuela { get;set;}
+        public string carrera { get; set;}
+        public string fechaInicio { get;set;}
+        public string fechaFin{get;set;}
+        public string activo{get;set;}
+        public string fechaRegistro{get;set;}
+        public string fechaActualizacion { get; set; }
     }
 
     public class ListaEstudios

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using TalentoUAQ.Models;
 using Xamarin.Forms;
 
 namespace TalentoUAQ.Views
@@ -34,8 +37,30 @@ namespace TalentoUAQ.Views
             }
             if (!error)
             {
-                await DisplayAlert("Información", "Se guardo el Idioma", "Aceptar");
-                await Navigation.PopAsync();
+                HttpClient cliente = new HttpClient();
+                var formContent = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("idAspirante", "1"),
+                    new KeyValuePair<string, string>("idioma",idiomaNombre),
+                    new KeyValuePair<string, string>("porcentaje",porcentajeDominio.ToString()),
+                    new KeyValuePair<string, string>("activo","S"),
+                });
+
+                var myHttpClient = new HttpClient();
+                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/idiomas/guardar", formContent);
+
+                var json = await response.Content.ReadAsStringAsync();
+                if (response.IsSuccessStatusCode)
+                {
+                    await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
+                    var detalle = new Curriculum();
+                    detalle.cargarGeneral();
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Algo Salio Mal", "Aceptar");
+                }
             }
         }
     }

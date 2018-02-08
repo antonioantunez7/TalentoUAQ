@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using TalentoUAQ.Models;
 using Xamarin.Forms;
 
@@ -8,6 +9,9 @@ namespace TalentoUAQ.Views
     public partial class DetalleOferta : ContentPage
     {
         string correoContacto;
+        string idFavorito;
+        string idOferta;
+        string idUsuarioExterno;
         public DetalleOferta(Ofertas oferta)
         {
             InitializeComponent();
@@ -30,15 +34,72 @@ namespace TalentoUAQ.Views
                     descSubcategoria = oferta.descSubcategoria,
                     correoContacto = oferta.correoContacto,
                     telefonoContacto = oferta.telefonoContacto,
-                    nombreContacto = oferta.nombreContacto
+                    nombreContacto = oferta.nombreContacto,
+                    idFavorito="1",
+                    idOferta=oferta.idOferta
                 }
             };
+            idFavorito = oferta.idFavorito;
+            idOferta = oferta.idOferta.ToString();
+            idUsuarioExterno= Application.Current.Properties["idUsuarioExterno"].ToString();
             correoContacto = oferta.correoContacto;
             DetalleDeLaOferta.ItemsSource = ofertas;
         }
         async void enviarCorrero(object sender, System.EventArgs e)
         {
             Device.OpenUri(new Uri("mailto:"+correoContacto));
+        }
+        async void AgregarEliminar(object sender, System.EventArgs e)
+        {
+            Button button = (Button)sender;
+            var answer = await DisplayAlert("Correcto", "Estas Seguro de "+button.Text, "Si","No");
+            if (answer) {
+                if (button.Text == "Eliminar de favoritos") {
+                    HttpClient cliente = new HttpClient();
+                    var formContent = new FormUrlEncodedContent(new[]
+                    {
+                        new KeyValuePair<string, string>("idFavorito",idFavorito),
+                        new KeyValuePair<string, string>("activo","N"),
+                    });
+
+                    var myHttpClient = new HttpClient();
+                    var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/favoritos/guardar", formContent);
+
+                    var json = await response.Content.ReadAsStringAsync();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await DisplayAlert("Correcto", "Se eiminó el Registro", "Aceptar");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Algo Salio Mal", "Aceptar");
+                    }
+                }
+                else{
+                    HttpClient cliente = new HttpClient();
+                    var formContent = new FormUrlEncodedContent(new[]
+                    {
+                        new KeyValuePair<string, string>("idOferta",idOferta),
+                        new KeyValuePair<string, string>("idUsuarioExterno",idUsuarioExterno),
+                        new KeyValuePair<string, string>("activo","S")
+                    });
+
+                    var myHttpClient = new HttpClient();
+                    var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/favoritos/guardar", formContent);
+
+                    var json = await response.Content.ReadAsStringAsync();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Algo Salio Mal", "Aceptar");
+                    }
+                }
+            }
         }
     }
 }

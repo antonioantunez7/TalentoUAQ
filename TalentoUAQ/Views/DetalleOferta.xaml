@@ -66,6 +66,7 @@
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
+                                                <Label Text="{Binding idFavorito}" IsVisible="False"/>
                                                 <Button x:Name="btnEnviarCorreo"
                                                     Clicked="enviarCorrero"
                                                     FontFamily="Futura-Medium"
@@ -74,6 +75,7 @@
                                                     VerticalOptions="Center">
                                                 </Button>
                                                 <Button x:Name="btnAgregarFavoritos"
+                                                        Clicked="AgregarEliminar"
                                                     FontFamily="Futura-Medium"
                                                     Text="{Binding nombreBoton}"
                                                     BackgroundColor="Gray"

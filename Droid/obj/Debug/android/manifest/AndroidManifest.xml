@@ -6,8 +6,8 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-  <application android:label="TalentoUAQ" android:icon="@drawable/logo" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/logo" android:label="Talento UAQ" android:theme="@style/MyTheme" android:name="md567c676a8914909d16940d64a23f63b23.MainActivity">
+  <application android:label="TalentoUAQ" android:icon="@drawable/logoempleo" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/logoempleo" android:label="Talento UAQ" android:theme="@style/MyTheme" android:name="md567c676a8914909d16940d64a23f63b23.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

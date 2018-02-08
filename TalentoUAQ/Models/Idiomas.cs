@@ -9,47 +9,13 @@ namespace TalentoUAQ.Models
         {
         }
 
-        public int idIdioma
-        {
-            get;
-            set;
-        }
-
-        public string idAspirante
-        {
-            get;
-            set;
-        }
-
-        public string idioma
-        {
-            get;
-            set;
-        }
-
-        public int porcentaje
-        {
-            get;
-            set;
-        }
-
-        public string activo
-        {
-            get;
-            set;
-        }
-
-        public string fechaRegistro
-        {
-            get;
-            set;
-        }
-
-        public string fechaActualizacion
-        {
-            get;
-            set;
-        }
+        public string idIdioma{get;set;}
+        public string idAspirante{get;set;}
+        public string idioma{get;set;}
+        public string porcentaje{get;set;}
+        public string activo{get;set;}
+        public string fechaRegistro{get;set;}
+        public string fechaActualizacion{get;set;}
     }
 
     public class ListaIdiomas

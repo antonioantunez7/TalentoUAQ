@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace TalentoUAQ.Views
@@ -25,8 +25,32 @@ namespace TalentoUAQ.Views
             }
             if (!error)
             {
-                await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
-                await Navigation.PopAsync();
+                HttpClient cliente = new HttpClient();
+                var formContent = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("idAspirante", Application.Current.Properties["idAspirante"].ToString()),
+                    new KeyValuePair<string, string>("institucion",txtEmpresa.Text),
+                    new KeyValuePair<string, string>("cargo",txtPuesto.Text),
+                    new KeyValuePair<string, string>("fechaInicio",fechaInicio.Date.ToString("yyyy/MM/dd")),
+                    new KeyValuePair<string, string>("fechaInicio",fechaFin.Date.ToString("yyyy/MM/dd")),
+                    new KeyValuePair<string, string>("activo","S"),
+                });
+
+                var myHttpClient = new HttpClient();
+                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/experiencias/guardar", formContent);
+
+                var json = await response.Content.ReadAsStringAsync();
+                if (response.IsSuccessStatusCode)
+                {
+                    await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
+                    var detalle = new Curriculum();
+                    detalle.cargarGeneral();
+                    await Navigation.PopAsync();
+                }
+                else {
+                    await DisplayAlert("Error", "Algo Salio Mal", "Aceptar");
+                }
+                            
             }
         }
     }

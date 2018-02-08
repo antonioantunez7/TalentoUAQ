@@ -138,5 +138,59 @@ namespace TalentoUAQ.Services
             }
             return default(T);
         }
-   }
+        public async Task<T> GetCurriculumGeneral<T>(string url)
+        {
+            try
+            {
+                HttpClient cliente = new HttpClient();
+                var respuesta = await cliente.GetAsync(url);
+                Debug.Write(respuesta);
+                if (respuesta.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var jsonRespuesta = await respuesta.Content.ReadAsStringAsync();
+                    var jsonArmado = "{'listaCurriculumGeneral':" + jsonRespuesta + "}";
+                    Debug.WriteLine(jsonArmado);
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonArmado);
+                }
+                else
+                {
+                    var jsonArmado = "{'listaCurriculumGeneral':[]}";
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonArmado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("\nOcurrio un error en la funcion Get del Task");
+                Debug.WriteLine(ex);
+            }
+            return default(T);
+        }
+        public async Task<T> GetSubcategoriasUsuarios<T>(string url)
+        {
+            try
+            {
+                HttpClient cliente = new HttpClient();
+                var respuesta = await cliente.GetAsync(url);
+                Debug.Write(respuesta);
+                if (respuesta.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var jsonRespuesta = await respuesta.Content.ReadAsStringAsync();
+                    var jsonArmado = "{'listaSubcategoriasUsuarios':" + jsonRespuesta + "}";
+                    Debug.WriteLine(jsonArmado);
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonArmado);
+                }
+                else
+                {
+                    var jsonArmado = "{'listaSubcategoriasUsuarios':[]}";
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonArmado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("\nOcurrio un error en la funcion Get del Task");
+                Debug.WriteLine(ex);
+            }
+            return default(T);
+        }
+    }
 }

@@ -13,12 +13,12 @@ namespace TalentoUAQ
         public App()
         {
             InitializeComponent();
-            if (Application.Current.Properties.ContainsKey("idUsuario")
+            if (Application.Current.Properties.ContainsKey("idUsuarioExterno")
                 && Application.Current.Properties.ContainsKey("nombre")
                 && Application.Current.Properties.ContainsKey("paterno")
                 && Application.Current.Properties.ContainsKey("materno"))
             {
-                var idUsuario = Convert.ToInt32(Application.Current.Properties["idUsuario"]);
+                var idUsuario = Convert.ToInt32(Application.Current.Properties["idUsuarioExterno"]);
                 var nombre = (string)Application.Current.Properties["nombre"];
                 var paterno = (string)Application.Current.Properties["paterno"];
                 var materno = (string)Application.Current.Properties["paterno"];

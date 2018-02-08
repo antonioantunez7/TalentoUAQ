@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using TalentoUAQ.Models;
 using Xamarin.Forms;
 
 namespace TalentoUAQ.Views
@@ -43,9 +44,7 @@ namespace TalentoUAQ.Views
                 if (response.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
-                    var detalle = new Curriculum();
-                    detalle.cargarGeneral();
-                    await Navigation.PopAsync();
+                    await Navigation.PopToRootAsync();
                 }
                 else {
                     await DisplayAlert("Error", "Algo Salio Mal", "Aceptar");

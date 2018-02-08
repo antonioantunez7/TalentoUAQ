@@ -11,7 +11,8 @@
 namespace TalentoUAQ {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\user\\Documents\\proyetos\\bolsa\\ultimo\\TalentoUAQ\\TalentoUAQ\\App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\PJE\\Documents\\proyectos\\bolsa\\talentoActual\\TalentoUAQ\\TalentoUAQ\\App.xa" +
+        "ml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

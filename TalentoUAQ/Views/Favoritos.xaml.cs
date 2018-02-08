@@ -86,5 +86,10 @@ namespace TalentoUAQ.Views
             string[] fechaHoralNormal = fecha.Split(' ');
             return fechaHoralNormal[0];
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            cargaFavoritos();
+        }
     }
 }

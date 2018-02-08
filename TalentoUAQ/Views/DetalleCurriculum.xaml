@@ -7,7 +7,8 @@
                     FontFamily="Futura-Medium"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    FontSize="Medium">
+                    FontSize="Medium"
+                    TextColor="#099">
                 </Label>
                 <Label Text="Telefono"
                     FontFamily="Futura-Medium"
@@ -27,7 +28,7 @@
                     FontSize="13"
                     TextColor="#099"/>
                 <Entry x:Name="correo"
-                    Placeholder="Nombre Completo"
+                    Placeholder="Correo Electronico"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">
                 </Entry>

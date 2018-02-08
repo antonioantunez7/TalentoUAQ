@@ -77,9 +77,7 @@ namespace TalentoUAQ.Views
                 var json = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
-                    var detalle = new Curriculum();
-                    //detalle.cargarGeneral();
-                    await Navigation.PushAsync(new NavigationPage(new Curriculum()));
+                    await Navigation.PopToRootAsync();
                     await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
                 }
                 else

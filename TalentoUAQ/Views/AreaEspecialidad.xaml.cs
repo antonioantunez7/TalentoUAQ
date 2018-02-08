@@ -112,8 +112,6 @@ namespace TalentoUAQ.Views
                 if (response.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
-                    var detalle = new Curriculum();
-                    detalle.cargarGeneral();
                     await Navigation.PopAsync();
                 }
                 else

@@ -17,11 +17,10 @@ namespace TalentoUAQ.Views
         public Curriculum()
         {
             InitializeComponent();
-            cargarGeneral();
-            cargarSubcategorias();
+            
         }
-
-        public async void cargarGeneral() {
+        
+        public void cargarGeneral() {
             Device.BeginInvokeOnMainThread(async () =>
             {
             RestClient cliente = new RestClient();
@@ -116,7 +115,7 @@ namespace TalentoUAQ.Views
                 
             });
         }
-        public async void cargarSubcategorias()
+        public void cargarSubcategorias()
         {
             Device.BeginInvokeOnMainThread(async () =>
             {
@@ -127,8 +126,10 @@ namespace TalentoUAQ.Views
                     if (subcategoriasUsuariosTodas.listaSubcategoriasUsuarios.Count > 0)
                     {
                         subcategoriasUsuarios = new ObservableCollection<SubcategoriasUsuarios>();
-                        foreach (var scu in subcategoriasUsuariosTodas.listaSubcategoriasUsuarios) {
-                            subcategoriasUsuarios.Add(new SubcategoriasUsuarios {
+                        foreach (var scu in subcategoriasUsuariosTodas.listaSubcategoriasUsuarios)
+                        {
+                            subcategoriasUsuarios.Add(new SubcategoriasUsuarios
+                            {
                                 idSubcategoriaUsuario = scu.idSubcategoriaUsuario,
                                 descSubcategoria = scu.descSubcategoria,
                             });
@@ -138,6 +139,10 @@ namespace TalentoUAQ.Views
                         ListaSubcategoriasUsuarios.HeightRequest = total;
                         ListaSubcategoriasUsuarios.ItemsSource = subcategoriasUsuarios;
                     }
+                    else {
+                        ListaSubcategoriasUsuarios.HeightRequest = 0;
+                    }
+                    
                 }
             });
             
@@ -157,6 +162,7 @@ namespace TalentoUAQ.Views
         async void agregarModalEducacion(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new Educacion());
+            //await Navigation.PushAsync(new Educacion());
         }
         async void agregarModalIdiomas(object sender, System.EventArgs e)
         {
@@ -164,15 +170,17 @@ namespace TalentoUAQ.Views
         }
         async void eliminarEspecialidad_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            var subcategoriaUsuario = e.SelectedItem as SubcategoriasUsuarios;
+            var subcategoriaUsuarioo = e.SelectedItem as SubcategoriasUsuarios;
             var answer = await DisplayAlert("Confirmar", "¿Deseas Eliminar esta especialidad?", "Si", "No");
             if (answer) {
+                System.Diagnostics.Debug.Write("idSubcategoriaUsuario", subcategoriaUsuarioo.idSubcategoriaUsuario.ToString());
                 HttpClient cliente = new HttpClient();
                 var formContent = new FormUrlEncodedContent(new[]
                 {
-                    new KeyValuePair<string, string>("idSubcategoriaUsuario", subcategoriaUsuario.idSubcategoriaUsuario.ToString()),
+                    new KeyValuePair<string, string>("idSubcategoriaUsuario", subcategoriaUsuarioo.idSubcategoriaUsuario.ToString()),
                     new KeyValuePair<string, string>("activo","N"),
                 });
+                Console.Write(formContent);
                 var myHttpClient = new HttpClient();
                 var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/subcategoriasusuario/guardar", formContent);
                 var json = await response.Content.ReadAsStringAsync();
@@ -291,5 +299,19 @@ namespace TalentoUAQ.Views
             string[] fechaHoralNormal = fecha.Split(' ');
             return fechaHoralNormal[0];
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            System.Diagnostics.Debug.Write("fierrito");
+            cargarGeneral();
+            cargarSubcategorias();
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            System.Diagnostics.Debug.Write("fierrito2");
+        }
+
     }
 }

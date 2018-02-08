@@ -11,8 +11,8 @@
 namespace TalentoUAQ.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\user\\Documents\\proyetos\\bolsa\\ultimo\\TalentoUAQ\\TalentoUAQ\\Views\\Experie" +
-        "ncia.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\PJE\\Documents\\proyectos\\bolsa\\talentoActual\\TalentoUAQ\\TalentoUAQ\\Views\\" +
+        "Experiencia.xaml")]
     public partial class Experiencia : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

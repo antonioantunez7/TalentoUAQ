@@ -11,8 +11,8 @@
 namespace btUAQ {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\user\\Documents\\proyetos\\bolsa\\ultimo\\TalentoUAQ\\TalentoUAQ\\Views\\NewItem" +
-        "Page.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\PJE\\Documents\\proyectos\\bolsa\\talentoActual\\TalentoUAQ\\TalentoUAQ\\Views\\" +
+        "NewItemPage.xaml")]
     public partial class NewItemPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

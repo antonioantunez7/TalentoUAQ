@@ -41,7 +41,6 @@ namespace TalentoUAQ.Views
                     new KeyValuePair<string, string>("objetivo",objetivo),
                     new KeyValuePair<string, string>("telefono",telefono),
                     new KeyValuePair<string, string>("email",email),
-                    new KeyValuePair<string, string>("activo","S"),
                 });
 
                 var myHttpClient = new HttpClient();
@@ -51,8 +50,6 @@ namespace TalentoUAQ.Views
                 if (response.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Correcto", "Se guardó el Registro", "Aceptar");
-                    var detalle = new Curriculum();
-                    detalle.cargarGeneral();
                     await Navigation.PopAsync();
                 }
                 else

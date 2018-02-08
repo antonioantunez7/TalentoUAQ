@@ -24,104 +24,99 @@ namespace TalentoUAQ.Views
         public async void cargarGeneral() {
             Device.BeginInvokeOnMainThread(async () =>
             {
-                RestClient cliente = new RestClient();
-                System.Diagnostics.Debug.Write("**************************");
-                System.Diagnostics.Debug.Write("http://189.211.201.181:69/TalentoUAQWebService/api/DatosGenerales/" + Application.Current.Properties["idAspirante"]);
-                System.Diagnostics.Debug.Write("**************************");
-                var curriculumGeneral = await cliente.GetCurriculumGeneral<ListaCurriculumGeneral>("http://189.211.201.181:69/TalentoUAQWebService/api/DatosGenerales/" + Application.Current.Properties["idAspirante"]);
-                if (curriculumGeneral != null)
+            RestClient cliente = new RestClient();
+            var curriculumGeneral = await cliente.GetCurriculumGeneral<CurriculumGeneral>("http://189.211.201.181:69/TalentoUAQWebService/api/DatosGenerales/" + Application.Current.Properties["idAspirante"]);
+            if (curriculumGeneral != null)
+            {
+                if (curriculumGeneral.idUsuarioExterno != "")
                 {
-                    if (curriculumGeneral.listaCurriculumGeneral.Count > 0)
+                    Console.Write(curriculumGeneral.objetivo);
+                    experiencias = new ObservableCollection<Experiencias>();
+                    escolaridades = new ObservableCollection<Estudios>();
+                    idio = new ObservableCollection<IdiomasModel>();
+                    objetivo.Text = curriculumGeneral.objetivo;
+                    telefono.Text = curriculumGeneral.telefono;
+                    correo.Text = curriculumGeneral.email;
+                    sueldoDeseado.Text = curriculumGeneral.sueldoDeseado;
+                    foreach (var expe in curriculumGeneral.experiencias)
                     {
-                        foreach (var general in curriculumGeneral.listaCurriculumGeneral)
+                        string fechaIn = "";
+                        string fechaFi = "";
+                        if (expe.fechaInicio != "" && expe.fechaInicio != null)
                         {
-                            experiencias = new ObservableCollection<Experiencias>();
-                            escolaridades = new ObservableCollection<Estudios>();
-                            idio = new ObservableCollection<IdiomasModel>();
-                            objetivo.Text = general.objetivo;
-                            telefono.Text = general.telefono;
-                            correo.Text = general.email;
-                            sueldoDeseado.Text = general.sueldoDeseado;
-                            foreach (var expe in general.tblexperiencias)
-                            {
-                                string fechaIn = "";
-                                string fechaFi = "";
-                                if (expe.fechaInicio != "" && expe.fechaInicio != null)
-                                {
-                                    fechaIn = fechaSQLaNormal(expe.fechaInicio);
-                                }
-                                else {
-                                    fechaIn = expe.fechaInicio;
-                                }
-                                if (expe.fechaFin != "" && expe.fechaFin != null)
-                                {
-                                    fechaFi = fechaSQLaNormal(expe.fechaFin);
-                                }
-                                else
-                                {
-                                    fechaFi = expe.fechaFin;
-                                }
-                                experiencias.Add(new Experiencias {
-                                    idExperiencia = expe.idExperiencia,
-                                    cargo = expe.cargo,
-                                    institucion= expe.institucion,
-                                    fechaInicio = fechaIn,
-                                    fechaFin = fechaFi
-                                });
-                            }
-                            foreach (var edu in general.tblescolaridades) {
-                                string fechaIn = "";
-                                string fechaFi = "";
-                                if (edu.fechaInicio != "" && edu.fechaInicio != null)
-                                {
-                                    fechaIn = fechaSQLaNormal(edu.fechaInicio);
-                                }
-                                else
-                                {
-                                    fechaIn = edu.fechaInicio;
-                                }
-                                if (edu.fechaFin != "" && edu.fechaFin != null)
-                                {
-                                    fechaFi = fechaSQLaNormal(edu.fechaFin);
-                                }
-                                else
-                                {
-                                    fechaFi = edu.fechaFin;
-                                }
-                                escolaridades.Add(new Estudios {
-                                    idEscolaridad=edu.idEscolaridad,
-                                    fechaInicio= fechaIn,
-                                    escuela=edu.escuela,
-                                    carrera=edu.carrera,
-                                    fechaFin= fechaFi
-                                });
-                            }
-                            foreach (var idi in general.tblidiomas)
-                            {
-                                idio.Add(new IdiomasModel
-                                {
-                                    idioma=idi.idioma,
-                                    idIdioma=idi.idIdioma,
-                                    porcentaje=idi.porcentaje
-                                });
-                            }
-                            Double totalExperiencias = 80 * experiencias.Count;
-                            ListaExperiencia.HeightRequest = totalExperiencias;
-                            Double totalEstudios = 80 * escolaridades.Count;
-                            ListaEstudios.HeightRequest = totalEstudios;
-                            Double totalIdiomas = 35 * idio.Count;
-                            ListaIdiomas.HeightRequest = totalIdiomas;
-                            ListaExperiencia.ItemsSource = experiencias;
-                            ListaEstudios.ItemsSource = escolaridades;
-                            ListaIdiomas.ItemsSource = idio;
+                            fechaIn = fechaSQLaNormalSH(expe.fechaInicio);
                         }
-                        
+                        else {
+                            fechaIn = expe.fechaInicio;
+                        }
+                        if (expe.fechaFin != "" && expe.fechaFin != null)
+                        {
+                            fechaFi = fechaSQLaNormalSH(expe.fechaFin);
+                        }
+                        else
+                        {
+                            fechaFi = expe.fechaFin;
+                        }
+                        experiencias.Add(new Experiencias {
+                            idExperiencia = expe.idExperiencia,
+                            cargo = expe.cargo,
+                            institucion= expe.institucion,
+                            fechaInicio = fechaIn,
+                            fechaFin = fechaFi
+                        });
+                     }
+                        foreach (var edu in curriculumGeneral.escolaridades) {
+                            string fechaIn = "";
+                            string fechaFi = "";
+                            if (edu.fechaInicio != "" && edu.fechaInicio != null)
+                            {
+                                fechaIn = fechaSQLaNormalSH(edu.fechaInicio);
+                            }
+                            else
+                            {
+                                fechaIn = edu.fechaInicio;
+                            }
+                            if (edu.fechaFin != "" && edu.fechaFin != null)
+                            {
+                                fechaFi = fechaSQLaNormalSH(edu.fechaFin);
+                            }
+                            else
+                            {
+                                fechaFi = edu.fechaFin;
+                            }
+                            escolaridades.Add(new Estudios {
+                                idEscolaridad=edu.idEscolaridad,
+                                fechaInicio= fechaIn,
+                                escuela=edu.escuela,
+                                carrera=edu.carrera,
+                                fechaFin= fechaFi
+                            });
+                        }
+
+                        foreach (var idi in curriculumGeneral.idiomas)
+                        {
+                            idio.Add(new IdiomasModel
+                            {
+                                idioma=idi.idioma,
+                                idIdioma=idi.idIdioma,
+                                porcentaje=idi.porcentaje
+                            });
+                        }
+                        Double totalExperiencias = 80 * experiencias.Count;
+                        ListaExperiencia.HeightRequest = totalExperiencias;
+                        Double totalEstudios = 80 * escolaridades.Count;
+                        ListaEstudios.HeightRequest = totalEstudios;
+                        Double totalIdiomas = 35 * idio.Count;
+                        ListaIdiomas.HeightRequest = totalIdiomas;
+                        ListaExperiencia.ItemsSource = experiencias;
+                        ListaEstudios.ItemsSource = escolaridades;
+                        ListaIdiomas.ItemsSource = idio;
                     }
                 }
                 
             });
         }
-        void cargarSubcategorias()
+        public async void cargarSubcategorias()
         {
             Device.BeginInvokeOnMainThread(async () =>
             {
@@ -185,7 +180,6 @@ namespace TalentoUAQ.Views
                 if (response.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Mensaje", "Registro Eliminado", "Aceptar");
-                    cargarGeneral();
                     cargarSubcategorias();
                 }
                 else
@@ -242,7 +236,7 @@ namespace TalentoUAQ.Views
                 var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/experiencias/guardar", formContent);
 
                 var json = await response.Content.ReadAsStringAsync();
-                await DisplayAlert("Mensaje", json, "Aceptar");
+                //await DisplayAlert("Mensaje", json, "Aceptar");
                 if (response.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Mensaje", "Registro Eliminado", "Aceptar");
@@ -273,7 +267,7 @@ namespace TalentoUAQ.Views
                 var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/idiomas/guardar", formContent);
 
                 var json = await response.Content.ReadAsStringAsync();
-                await DisplayAlert("Mensaje", json, "Aceptar");
+                //await DisplayAlert("Mensaje", json, "Aceptar");
                 if (response.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Mensaje", "Registro Eliminado", "Aceptar");

@@ -18,9 +18,9 @@ namespace TalentoUAQ.Models
         public string activo { get; set; }
         public string fechaRegistro { get; set; }
         public string fechaActualizacion { get; set; }
-        public List<Estudios> tblescolaridades { get; set; }
-        public List<Experiencias> tblexperiencias { get; set; }
-        public List<IdiomasModel> tblidiomas { get; set; }
+        public List<Estudios> escolaridades { get; set; }
+        public List<Experiencias> experiencias { get; set; }
+        public List<IdiomasModel> idiomas { get; set; }
     }
     public class ListaCurriculumGeneral
     {

@@ -152,7 +152,7 @@ namespace TalentoUAQ.Models
             get;
             set;
         }
-        public string idFavorito { get; internal set; }
+        public string idFavorito { get;  set; }
     }
 
     public class ListaOfertas

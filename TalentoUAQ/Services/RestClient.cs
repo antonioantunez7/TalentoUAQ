@@ -148,9 +148,9 @@ namespace TalentoUAQ.Services
                 if (respuesta.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var jsonRespuesta = await respuesta.Content.ReadAsStringAsync();
-                    var jsonArmado = "{'listaCurriculumGeneral':" + jsonRespuesta + "}";
+                    var jsonArmado = "{\"listaCurriculumGeneral\":" + jsonRespuesta + "}";
                     Debug.WriteLine(jsonArmado);
-                    return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonArmado);
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonRespuesta);
                 }
                 else
                 {

@@ -9,7 +9,7 @@ namespace TalentoUAQ.Models
         {
         }
 
-        public int idEscolaridad { get;set;}
+        public string idEscolaridad { get;set;}
         public string idAspirante { get;set;}
         public string escuela { get;set;}
         public string carrera { get; set;}

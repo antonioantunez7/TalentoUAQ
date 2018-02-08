@@ -35,7 +35,7 @@ namespace TalentoUAQ.Views
                     correoContacto = oferta.correoContacto,
                     telefonoContacto = oferta.telefonoContacto,
                     nombreContacto = oferta.nombreContacto,
-                    idFavorito="1",
+                    idFavorito=oferta.idFavorito,
                     idOferta=oferta.idOferta
                 }
             };
@@ -55,6 +55,7 @@ namespace TalentoUAQ.Views
             var answer = await DisplayAlert("Correcto", "Estas Seguro de "+button.Text, "Si","No");
             if (answer) {
                 if (button.Text == "Eliminar de favoritos") {
+                    System.Diagnostics.Debug.Write("mames",idFavorito);
                     HttpClient cliente = new HttpClient();
                     var formContent = new FormUrlEncodedContent(new[]
                     {
@@ -68,7 +69,7 @@ namespace TalentoUAQ.Views
                     var json = await response.Content.ReadAsStringAsync();
                     if (response.IsSuccessStatusCode)
                     {
-                        await DisplayAlert("Correcto", "Se eiminó el Registro", "Aceptar");
+                        await DisplayAlert("Correcto", "Se eliminó el Registro", "Aceptar");
                         await Navigation.PopAsync();
                     }
                     else

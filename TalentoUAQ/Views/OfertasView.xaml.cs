@@ -85,7 +85,8 @@ namespace TalentoUAQ.Views
                                 descTipoEmpleo = ofertax.descTipoEmpleo,
                                 descMunicipioEstado = ofertax.descMunicipio +", "+ofertax.descEstado,
                                 telefonoContacto = ofertax.telefonoContacto,
-                                nombreContacto = ofertax.nombreContacto
+                                nombreContacto = ofertax.nombreContacto,
+                                idOferta = ofertax.idOferta
                             });
                         }
                         listaOfertas.ItemsSource = ofertas;

@@ -12,18 +12,10 @@ AndroidSdkPath=
 AndroidNdkPath=
 JavaSdkPath=
 AndroidSequencePointsMode=None
-<<<<<<< Updated upstream
-XamarinAndroidVersion=8.1.0-24
-=======
 XamarinAndroidVersion=8.1.0-25
->>>>>>> Stashed changes
 MonoSymbolArchive=False
 AndroidUseLatestPlatformSdk=false
 TargetFrameworkVersion=v7.1
 AndroidCreatePackagePerAbi=
-<<<<<<< Updated upstream
-OS=Windows_NT
-=======
 OS=Unix
->>>>>>> Stashed changes
 DesignTimeBuild=true

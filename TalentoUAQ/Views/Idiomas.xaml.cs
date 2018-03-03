@@ -47,7 +47,7 @@ namespace TalentoUAQ.Views
                 });
 
                 var myHttpClient = new HttpClient();
-                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/idiomas/guardar", formContent);
+                var response = await myHttpClient.PostAsync("http://148.240.202.160:69/TalentoUAQWebService/api/idiomas/guardar", formContent);
 
                 var json = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)

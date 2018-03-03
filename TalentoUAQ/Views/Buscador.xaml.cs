@@ -27,7 +27,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var categorias = await cliente.GetCategorias<ListaCategorias>("http://189.211.201.181:69/TalentoUAQWebService/api/tblcategorias");
+                var categorias = await cliente.GetCategorias<ListaCategorias>("http://148.240.202.160:69/TalentoUAQWebService/api/tblcategorias");
                 if(categorias != null){
                     if(categorias.listaCategorias.Count > 0){
                         lcategorias = new List<Categorias>();
@@ -76,7 +76,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var subcategorias = await cliente.GetSubcategorias<ListaSubcategorias>("http://189.211.201.181:69/TalentoUAQWebService/api/tblsubcategorias/categoria?cveCategoria="+cveCategoria);
+                var subcategorias = await cliente.GetSubcategorias<ListaSubcategorias>("http://148.240.202.160:69/TalentoUAQWebService/api/tblsubcategorias/categoria?cveCategoria="+cveCategoria);
                 if(subcategorias != null){
                     if(subcategorias.listaSubcategorias.Count > 0){
                         lsubcategorias = new List<Subcategorias>();
@@ -276,7 +276,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var estados = await cliente.GetEstados<ListaEstados>("http://189.211.201.181:69/TalentoUAQWebService/api/tblestados");
+                var estados = await cliente.GetEstados<ListaEstados>("http://148.240.202.160:69/TalentoUAQWebService/api/tblestados");
                 if (estados != null)
                 {
                     if (estados.listaEstados.Count > 0)

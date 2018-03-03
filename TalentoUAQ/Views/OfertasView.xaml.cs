@@ -56,11 +56,11 @@ namespace TalentoUAQ.Views
                 {
                     cveSubcategoria = ""+oferta.cveSubcategoria;     
                 }
-                Console.WriteLine("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/" + fechaInicioOferta + "/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/"+cveSubcategoria+"/cveCategoria/"+cveCategoria+"/cveMunicipio/0/cveEstado/0");
+                Console.WriteLine("http://148.240.202.160:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/" + titulo + "/sueldoInicio/" + sueldoInicio + "/sueldoFin/" + sueldoFin + "/fechaInicioOferta/" + fechaInicioOferta + "/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/"+cveSubcategoria+"/cveCategoria/"+cveCategoria+"/cveMunicipio/0/cveEstado/0");
                 Debug.Write("\nfechaDesde: [");
                 Debug.Write(fechaInicioOferta);
                 Debug.Write("\n]");
-                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/"+titulo+"/sueldoInicio/"+sueldoInicio+"/sueldoFin/"+sueldoFin+"/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/"+cveSubcategoria+"/cveCategoria/"+cveCategoria+"/cveMunicipio/0/cveEstado/"+cveEstado);
+                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://148.240.202.160:69/TalentoUAQWebService/api/tblofertasbusqueda/titulo/"+titulo+"/sueldoInicio/"+sueldoInicio+"/sueldoFin/"+sueldoFin+"/fechaInicioOferta/"+fechaInicioOferta+"/fechaFinOferta/0/cveEmpresa/0/cveTipoEmpleo/0/cveSubcategoria/"+cveSubcategoria+"/cveCategoria/"+cveCategoria+"/cveMunicipio/0/cveEstado/"+cveEstado);
                 if (ofertasResp != null)
                 {
                     if (ofertasResp.listaOfertas.Count > 0)

@@ -24,7 +24,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
             RestClient cliente = new RestClient();
-            var curriculumGeneral = await cliente.GetCurriculumGeneral<CurriculumGeneral>("http://189.211.201.181:69/TalentoUAQWebService/api/DatosGenerales/" + Application.Current.Properties["idAspirante"]);
+            var curriculumGeneral = await cliente.GetCurriculumGeneral<CurriculumGeneral>("http://148.240.202.160:69/TalentoUAQWebService/api/DatosGenerales/" + Application.Current.Properties["idAspirante"]);
             if (curriculumGeneral != null)
             {
                 if (curriculumGeneral.idUsuarioExterno != "")
@@ -120,7 +120,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var subcategoriasUsuariosTodas = await cliente.GetSubcategoriasUsuarios<ListaSubcategoriasUsuarios>("http://189.211.201.181:69/TalentoUAQWebService/api/subcategoriasusuario/" + Application.Current.Properties["idUsuarioExterno"]);
+                var subcategoriasUsuariosTodas = await cliente.GetSubcategoriasUsuarios<ListaSubcategoriasUsuarios>("http://148.240.202.160:69/TalentoUAQWebService/api/subcategoriasusuario/" + Application.Current.Properties["idUsuarioExterno"]);
                 if (subcategoriasUsuariosTodas != null)
                 {
                     if (subcategoriasUsuariosTodas.listaSubcategoriasUsuarios.Count > 0)
@@ -182,7 +182,7 @@ namespace TalentoUAQ.Views
                 });
                 Console.Write(formContent);
                 var myHttpClient = new HttpClient();
-                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/subcategoriasusuario/guardar", formContent);
+                var response = await myHttpClient.PostAsync("http://148.240.202.160:69/TalentoUAQWebService/api/subcategoriasusuario/guardar", formContent);
                 var json = await response.Content.ReadAsStringAsync();
                 //await DisplayAlert("Mensaje", json, "Aceptar");
                 if (response.IsSuccessStatusCode)
@@ -210,7 +210,7 @@ namespace TalentoUAQ.Views
                 });
 
                 var myHttpClient = new HttpClient();
-                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/escolaridades/guardar", formContent);
+                var response = await myHttpClient.PostAsync("http://148.240.202.160:69/TalentoUAQWebService/api/escolaridades/guardar", formContent);
 
                 var json = await response.Content.ReadAsStringAsync();
                 //await DisplayAlert("Mensaje", json, "Aceptar");
@@ -241,7 +241,7 @@ namespace TalentoUAQ.Views
                 });
 
                 var myHttpClient = new HttpClient();
-                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/experiencias/guardar", formContent);
+                var response = await myHttpClient.PostAsync("http://148.240.202.160:69/TalentoUAQWebService/api/experiencias/guardar", formContent);
 
                 var json = await response.Content.ReadAsStringAsync();
                 //await DisplayAlert("Mensaje", json, "Aceptar");
@@ -272,7 +272,7 @@ namespace TalentoUAQ.Views
                 });
 
                 var myHttpClient = new HttpClient();
-                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/idiomas/guardar", formContent);
+                var response = await myHttpClient.PostAsync("http://148.240.202.160:69/TalentoUAQWebService/api/idiomas/guardar", formContent);
 
                 var json = await response.Content.ReadAsStringAsync();
                 //await DisplayAlert("Mensaje", json, "Aceptar");

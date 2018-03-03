@@ -22,7 +22,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://189.211.201.181:69/TalentoUAQWebService/api/tblofertas/favoritos/usuario/" + Application.Current.Properties["idUsuarioExterno"]);
+                var ofertasResp = await cliente.GetOfertas<ListaOfertas>("http://148.240.202.160:69/TalentoUAQWebService/api/tblofertas/favoritos/usuario/" + Application.Current.Properties["idUsuarioExterno"]);
                 if (ofertasResp != null)
                 {
                     if (ofertasResp.listaOfertas.Count > 0)

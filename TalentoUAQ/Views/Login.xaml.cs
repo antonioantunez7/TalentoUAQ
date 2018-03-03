@@ -32,7 +32,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 //RestClient cliente = new RestClient();
-                //var eventos = await cliente.Get<VistaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos");
+                //var eventos = await cliente.Get<VistaEventos>("http://148.240.202.160:86/CulturaUAQWebservice/api/tbleventos");
                 var eventos = "default";
                 btnIngresar.IsEnabled = true;//Habilita el boton
                 waitActivityIndicador.IsRunning = false;//Quita el de cargando

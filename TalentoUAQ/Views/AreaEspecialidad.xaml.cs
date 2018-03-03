@@ -24,7 +24,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var categorias = await cliente.GetCategorias<ListaCategorias>("http://189.211.201.181:69/TalentoUAQWebService/api/tblcategorias");
+                var categorias = await cliente.GetCategorias<ListaCategorias>("http://148.240.202.160:69/TalentoUAQWebService/api/tblcategorias");
                 if (categorias != null)
                 {
                     if (categorias.listaCategorias.Count > 0)
@@ -60,7 +60,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var subcategorias = await cliente.GetSubcategorias<ListaSubcategorias>("http://189.211.201.181:69/TalentoUAQWebService/api/tblsubcategorias/categoria?cveCategoria=" + cveCategoria);
+                var subcategorias = await cliente.GetSubcategorias<ListaSubcategorias>("http://148.240.202.160:69/TalentoUAQWebService/api/tblsubcategorias/categoria?cveCategoria=" + cveCategoria);
                 if (subcategorias != null)
                 {
                     if (subcategorias.listaSubcategorias.Count > 0)
@@ -106,7 +106,7 @@ namespace TalentoUAQ.Views
                 });
 
                 var myHttpClient = new HttpClient();
-                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/subcategoriasusuario/guardar", formContent);
+                var response = await myHttpClient.PostAsync("http://148.240.202.160:69/TalentoUAQWebService/api/subcategoriasusuario/guardar", formContent);
 
                 var json = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)

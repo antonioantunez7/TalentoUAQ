@@ -20,7 +20,7 @@ namespace TalentoUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var curriculumGeneral = await cliente.GetCurriculumGeneral<CurriculumGeneral>("http://189.211.201.181:69/TalentoUAQWebService/api/DatosGenerales/" + Application.Current.Properties["idAspirante"]);
+                var curriculumGeneral = await cliente.GetCurriculumGeneral<CurriculumGeneral>("http://148.240.202.160:69/TalentoUAQWebService/api/DatosGenerales/" + Application.Current.Properties["idAspirante"]);
                 if (curriculumGeneral != null)
                 {
                     if (curriculumGeneral.idUsuarioExterno != "")
@@ -90,7 +90,7 @@ namespace TalentoUAQ.Views
                 });
 
                 var myHttpClient = new HttpClient();
-                var response = await myHttpClient.PostAsync("http://189.211.201.181:69/TalentoUAQWebService/api/aspirantes/guardar", formContent);
+                var response = await myHttpClient.PostAsync("http://148.240.202.160:69/TalentoUAQWebService/api/aspirantes/guardar", formContent);
 
                 var json = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
